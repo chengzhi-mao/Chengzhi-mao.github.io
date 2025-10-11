@@ -1,42 +1,182 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hi, I'm USERNAME</title>
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem auto; max-width: 720px; line-height: 1.6; }
-      header { margin-bottom: 1.5rem; }
-      nav a { margin-right: 1rem; text-decoration: none; }
-      footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chengzhi Mao — Rutgers CS</title>
+  <meta name="description" content="Chengzhi Mao — Assistant Professor, Rutgers CS. Research: LLMs, Computer Vision, Robust ML." />
+  <style>
+    :root{--max:980px;--fg:#111;--muted:#666;--link:#0a58ca;--bg:#fff;--border:#eee}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:40px auto;padding:0 20px}
+    header{display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:start}
+    h1{font-size:2rem;margin:.25rem 0}
+    .affil{white-space:pre-line;color:var(--muted)}
+    .contact a{margin-right:10px}
+    .headshot{width:220px;height:220px;object-fit:cover;border-radius:8px;border:1px solid var(--border)}
+    nav{margin:16px 0 24px 0} nav a{margin-right:14px;color:#444} nav a:hover{color:var(--fg)}
+    section{padding:18px 0;border-top:1px solid var(--border)}
+    h2{font-size:1.25rem;margin:0 0 .5rem 0}
+    .news li{margin:.2rem 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .paper{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start}
+    .thumb{width:110px;height:78px;object-fit:cover;border:1px solid var(--border);border-radius:4px;background:#fafafa}
+    .paper h3{font-size:1rem;margin:0}
+    .meta{font-size:.95rem;color:var(--muted)}
+    .by{font-size:.95rem}
+    .year{margin-top:8px;font-weight:600}
+    ul{padding-left:18px;margin:8px 0}
+    .teach li{margin:.2rem 0}
+    .students{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+    .badge{display:block;padding:10px;border:1px solid var(--border);border-radius:6px}
+    footer{color:var(--muted);font-size:.92rem;margin:24px 0 40px}
+    @media (max-width:800px){
+      header{grid-template-columns:1fr}
+      .headshot{justify-self:start}
+      .grid{grid-template-columns:1fr}
+      .paper{grid-template-columns:110px 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
     <header>
-      <h1>Hi, I'm USERNAME</h1>
-      <p>Researcher • Teacher • Builder</p>
-      <nav>
-        <a href="/">Home</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div>
+        <h1>Chengzhi Mao</h1>
+        <div class="affil">
+Assistant Professor, Department of Computer Science, Rutgers University
+Research Scientist, Google (LLMs, Vision, Robust ML)
+        </div>
+        <div class="contact" style="margin-top:8px">
+          <a href="mailto:YOUR-EMAIL">YOUR-EMAIL</a>
+          <a href="GOOGLE-SCHOLAR-URL">Google Scholar</a>
+          <a href="https://selfie.cs.columbia.edu">SelfIE</a>
+          <a href="assets/docs/Chengzhi_Mao_CV.pdf">CV (PDF)</a>
+        </div>
+        <nav>
+          <a href="#bio">Bio</a>
+          <a href="#students">Students</a>
+          <a href="#research">Papers</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <img class="headshot" src="assets/img/profile.jpg" alt="Chengzhi Mao headshot" />
     </header>
 
-    <main>
-      <h2>About</h2>
-      <p>Short intro about you. Replace this text.</p>
+    <section id="bio">
+      <h2>Brief Bio</h2>
+      <p>
+        I am an Assistant Professor of Computer Science at Rutgers University and a Research Scientist at Google.
+        My research spans large language models, computer vision, and robust machine learning—especially how to make
+        foundation models reliable in open-world, nonstationary settings. Previously, I was a Core Academic Member at
+        MILA and an Assistant Professor at McGill. I completed my Ph.D. at Columbia University, advised by
+        Junfeng Yang and Carl Vondrick.
+      </p>
+      <p>
+        I am actively recruiting highly self-motivated Ph.D. students and postdocs. If you’re interested, please email me with your CV and a brief note on how your background aligns with robust and causal learning for LLMs and vision.
+      </p>
+    </section>
 
-      <h2 id="publications">Publications</h2>
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><strong>Jan 2025:</strong> One paper accepted to ICLR 2025 and one to NAACL 2025.</li>
+        <li><strong>Nov 2024:</strong> Paper accepted to ASPLOS 2025; paper accepted to EMNLP 2025 (Main).</li>
+        <li><strong>Oct 2024:</strong> Serving as Area Chair for ICLR 2025.</li>
+        <li><strong>Apr 2024:</strong> ICML 2024 paper on LLM interpretation accepted.</li>
+        <li><strong>Feb 2024:</strong> CVPR 2024 Highlight (top 2%).</li>
+      </ul>
+    </section>
+
+    <section id="students">
+      <h2>PhD Students and Postdocs</h2>
+      <!-- Add names and links as they join your group -->
+      <div class="students">
+        <span class="badge">Your Student 1 — PhD</span>
+        <span class="badge">Your Student 2 — PhD</span>
+        <span class="badge">Your Student 3 — MS</span>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Selected Papers</h2>
+
+      <div class="year">2024–2025</div>
+      <div class="grid">
+        <div class="paper">
+          <img class="thumb" src="assets/img/papers/selfie.jpg" alt="SelfIE thumbnail" />
+          <div>
+            <h3>SelfIE: Self-Interpretation of Large Language Model Embeddings</h3>
+            <div class="by">Haozhe Chen, Carl Vondrick, <strong>Chengzhi Mao</strong></div>
+            <div class="meta">ICML 2024 — <a href="https://arxiv.org/">paper</a> · <a href="https://selfie.cs.columbia.edu">project</a></div>
+          </div>
+        </div>
+
+        <div class="paper">
+          <img class="thumb" src="assets/img/papers/raider.jpg" alt="Raidar thumbnail" />
+          <div>
+            <h3>Raidar: geneRative AI Detection viA Rewriting</h3>
+            <div class="by"><strong>Chengzhi Mao</strong>, Carl Vondrick, Hao Wang, Junfeng Yang</div>
+            <div class="meta">ICLR 2024 — <a href="https://arxiv.org/">paper</a></div>
+          </div>
+        </div>
+
+        <div class="paper">
+          <img class="thumb" src="assets/img/papers/ivl-text-explanations.jpg" alt="Text explanations thumbnail" />
+          <div>
+            <h3>Interpreting &amp; Controlling Large VLMs via Text Explanations</h3>
+            <div class="by">Haozhe Chen, Junfeng Yang, Carl Vondrick, <strong>Chengzhi Mao</strong></div>
+            <div class="meta">ICLR 2024 — <a href="https://arxiv.org/">paper</a></div>
+          </div>
+        </div>
+
+        <div class="paper">
+          <img class="thumb" src="assets/img/papers/cvp.jpg" alt="CVP thumbnail" />
+          <div>
+            <h3>Convolutional Visual Prompts</h3>
+            <div class="by">Yun-Yun Tsai*, <strong>Chengzhi Mao*</strong>, Junfeng Yang</div>
+            <div class="meta">NeurIPS 2023 — <a href="https://arxiv.org/">paper</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="year">Earlier</div>
       <ul>
-        <li>Paper 1 (2025) — brief description.</li>
-        <li>Paper 2 (2024) — brief description.</li>
+        <li><em>Understanding Zero-shot Adversarial Robustness for Large-Scale Models</em>, ICLR 2023.</li>
+        <li><em>Robust Perception through Equivariance</em>, ICML 2023.</li>
+        <li><em>Real-Time Neural Voice Camouflage</em>, ICLR 2022 (Oral).</li>
+        <li><em>Adversarial Attacks are Reversible with Natural Supervision</em>, ICCV 2021.</li>
+        <li><em>Generative Interventions for Causal Learning</em>, CVPR 2021.</li>
+        <li><em>Multitask Learning Strengthens Adversarial Robustness</em>, ECCV 2020.</li>
+        <li><em>Metric Learning for Adversarial Robustness</em>, NeurIPS 2019.</li>
       </ul>
 
-      <h2 id="contact">Contact</h2>
-      <p>Email: you@somewhere.edu</p>
-    </main>
+      <!-- To add more: duplicate a .paper block or list item. -->
+    </section>
 
-    <footer>© <span id="y"></span> USERNAME</footer>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-  </body>
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="teach">
+        <li>Advanced Topics in Robust &amp; Causal Learning (Rutgers CS) — 2025–</li>
+        <li>Guest lectures and seminars on LLM robustness and causal methods.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Department of Computer Science, Rutgers University<br/>
+        Email: <a href="mailto:YOUR-EMAIL">YOUR-EMAIL</a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Chengzhi Mao · This site follows a simple, readable academic layout inspired by colleagues’ pages.
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
 </html>
