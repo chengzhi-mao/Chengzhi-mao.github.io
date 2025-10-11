@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hi, I'm USERNAME</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem auto; max-width: 720px; line-height: 1.6; }
+      header { margin-bottom: 1.5rem; }
+      nav a { margin-right: 1rem; text-decoration: none; }
+      footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hi, I'm USERNAME</h1>
+      <p>Researcher • Teacher • Builder</p>
+      <nav>
+        <a href="/">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>About</h2>
+      <p>Short intro about you. Replace this text.</p>
+
+      <h2 id="publications">Publications</h2>
+      <ul>
+        <li>Paper 1 (2025) — brief description.</li>
+        <li>Paper 2 (2024) — brief description.</li>
+      </ul>
+
+      <h2 id="contact">Contact</h2>
+      <p>Email: you@somewhere.edu</p>
+    </main>
+
+    <footer>© <span id="y"></span> USERNAME</footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </body>
+</html>
