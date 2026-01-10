@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Topics in Foundation Models</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        .header-link { font-size: 0.9em; text-decoration: none; color: #0366d6; }
+        .section { margin-bottom: 30px; }
+        .grading-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0366d6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background-color: #f2f2f2; width: 15%; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="header-link">← Back to Home</a>
+
+    <div class="section">
+        <h1>Advanced Topics in Foundation Models</h1>
+        <p><strong>Course Description:</strong> This advanced graduate seminar explores the frontier of Large Language Models (LLMs) and Multimodal Foundation Models. We move beyond standard autoregressive architectures to examine next-generation paradigms, including hierarchical reasoning, latent reasoning, diffusion-based language modeling, and reinforcement learning for reasoning. The course emphasizes both theoretical understanding and practical safety alignment, drawing heavily on recent breakthroughs in mechanism interpretability, test-time compute scaling, and agentic workflows.</p>
+    </div>
+
+    <div class="section">
+        <h2>Grading & Logistics</h2>
+        <div class="grading-box">
+            <h3>Grading Breakdown</h3>
+            <ul>
+                <li><strong>Final Research Project:</strong> 60%</li>
+                <li><strong>Paper Presentation & Participation:</strong> 40%
+                    <ul>
+                        <li>Slides (due 1 day before class): 10%</li>
+                        <li>Presentation Delivery: 20%</li>
+                        <li>Daily Participation: 10%</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><em>Note: For presentations, please use the NeurIPS template.</em></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Topic & Readings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Week 1</td>
+                    <td><strong>Introduction and Logistics</strong><br>
+                    Overview of the foundation model landscape, course goals, and evolution from transformers to reasoning-heavy architectures.</td>
+                </tr>
+                <tr>
+                    <td>Week 2</td>
+                    <td><strong>Interpretation and Mechanism Analysis</strong><br>
+                    Selfie (Interpretation/Concept Erasure).<br>
+                    Circuit tracing: <a href="https://transformer-circuits.pub/2025/attribution-graphs/methods.html">Attribution Graphs</a></td>
+                </tr>
+                <tr>
+                    <td>Week 3</td>
+                    <td><strong>Hierarchical Reasoning and Test-Time Compute</strong><br>
+                    Hierarchical Reasoning Model (<a href="https://arxiv.org/abs/2404.02258">arXiv</a>).<br>
+                    Mixture of depth (<a href="https://arxiv.org/abs/2502.05171">arXiv</a>).<br>
+                    Scaling up Test-Time Compute with Latent Reasoning.</td>
+                </tr>
+                <tr>
+                    <td>Week 4</td>
+                    <td><strong>RL Algorithms and Scaling</strong><br>
+                    Learning from intrinsic consistency and data curation. GRPO, DAPO, PPO.<br>
+                    The art of scaling reinforcement learning for LLMs (<a href="https://arxiv.org/html/2510.13786v1">arXiv</a>).</td>
+                </tr>
+                <tr>
+                    <td>Week 5</td>
+                    <td><strong>RL Reward and Data</strong><br>
+                    C3R (Cross-modal Cycle Consistency as Reward). Process-reward.<br>
+                    STEPWISER: stepwise generative judges.<br>
+                    OpenThought recipes.</td>
+                </tr>
+                <tr>
+                    <td>Week 6</td>
+                    <td><strong>Latent Thinking (Mull Tokens)</strong><br>
+                    Allocating compute time to "mull over" difficult inputs in a latent space.<br>
+                    Trade-off between inference-time compute and reasoning depth.</td>
+                </tr>
+                <tr>
+                    <td>Week 7</td>
+                    <td><strong>Parallel Thinking</strong><br>
+                    Parallel-R1 (Yang’s paper).</td>
+                </tr>
+                <tr>
+                    <td>Week 8</td>
+                    <td><strong>Diffusion Language Models</strong><br>
+                    (Zirui’s paper).</td>
+                </tr>
+                <tr>
+                    <td>Week 9</td>
+                    <td><strong>Hybrid Architectures & Long Context</strong><br>
+                    Transfusion: Merging discrete token generation with continuous diffusion.<br>
+                    Diffusion Forcing. Self challenging language model agents.<br>
+                    Long Context Memory: System 2 attention, Recursive Language Models.</td>
+                </tr>
+                <tr>
+                    <td>Week 10</td>
+                    <td><strong>Midterm Presentation & Guest Lectures</strong></td>
+                </tr>
+                <tr>
+                    <td>Week 11</td>
+                    <td><strong>Safety</strong><br>
+                    Automated attacks and gradient-based search.<br>
+                    DAGR (Diversity-Aware Gradient-Guided Red-Teaming).<br>
+                    Deliberate alignment, LARGO.</td>
+                </tr>
+                <tr>
+                    <td>Week 12</td>
+                    <td><strong>Deep Research Agents</strong><br>
+                    RL for open-ended research.<br>
+                    Openthoughts (<a href="https://arxiv.org/abs/2506.04178">arXiv</a>).<br>
+                    Dr. Tulu: RL with Evolving Rubrics. The "RLER" loop.</td>
+                </tr>
+                <tr>
+                    <td>Week 13</td>
+                    <td><strong>Formal Verification & Math & Coding</strong><br>
+                    Grounding LLM reasoning in formal logic. Goedel-LM.<br>
+                    HyperTree Proof Search or AlphaProof.<br>
+                    Using the Lean compiler as the ultimate reward model.</td>
+                </tr>
+                <tr>
+                    <td>Week 14</td>
+                    <td><strong>Video & World Models Visual Tokenization</strong><br>
+                    Compressing video into discrete or continuous tokens.<br>
+                    DeltaTok. RAE (Resolution-free Autoencoders).</td>
+                </tr>
+                <tr>
+                    <td>Week 15</td>
+                    <td><strong>Guest Lectures</strong></td>
+                </tr>
+                <tr>
+                    <td>Week 16</td>
+                    <td><strong>Final Presentations</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <a href="index.html" class="header-link">← Back to Home</a>
+    <br><br>
+
+</body>
+</html>
