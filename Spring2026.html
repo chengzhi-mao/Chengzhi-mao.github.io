@@ -17,12 +17,38 @@
         h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
         .header-link { font-size: 0.9em; text-decoration: none; color: #0366d6; }
         .section { margin-bottom: 30px; }
+        
+        /* Grading Box */
         .grading-box {
             background-color: #f8f9fa;
             border-left: 4px solid #0366d6;
             padding: 15px;
             margin: 20px 0;
         }
+
+        /* Prerequisites Box (High Bar Style) */
+        .prereq-box {
+            background-color: #fff8f8;
+            border-left: 4px solid #d73a49; /* Red warning color */
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .prereq-box h3 {
+            margin-top: 0;
+            color: #d73a49;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+        .prereq-box ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .prereq-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -40,7 +66,7 @@
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* New helper classes for the schedule */
+        /* Helper classes for the schedule */
         .topic-tag {
             display: inline-block;
             background: #e1ecf4;
@@ -51,11 +77,28 @@
             margin-bottom: 6px;
             font-weight: 600;
         }
-        .guest-speaker {
-            color: #d35400; /* Burnt orange for speakers to stand out */
-            font-weight: 600;
+        
+        /* Session Splitter Styles */
+        .session-part {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #ddd;
+        }
+        .part-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            font-weight: 700;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+        }
+        .guest-speaker {
+            color: #d35400; /* Burnt orange for speakers */
+            font-weight: 700;
+        }
+        .student-paper {
+            font-style: italic;
         }
     </style>
 </head>
@@ -66,6 +109,20 @@
     <div class="section">
         <h1>Advanced Topics in Foundation Models</h1>
         <p><strong>Course Description:</strong> This advanced graduate seminar explores the cutting edge of Large Language Models (LLMs) and Multimodal Foundation Models. While the course establishes a baseline with state-of-the-art autoregressive (AR) systems, the primary focus is on moving <em>beyond</em> standard architectures to examine next-generation paradigms. Key topics include hierarchical reasoning, latent space planning, and non-autoregressive generation. The curriculum emphasizes both empirical advances and theoretical understanding, drawing heavily on recent breakthroughs. The seminar will also feature guest lectures from researchers at leading industry labs and top-tier universities.</p>
+    </div>
+
+    <div class="section">
+        <div class="prereq-box">
+            <h3>⚠️ Prerequisites & Research Expectations</h3>
+            <p style="margin-top: 5px; margin-bottom: 10px; font-size: 0.95em;">
+                <strong>This is a research-intensive course.</strong> Students are expected to produce novel research artifacts suitable for submission to top-tier workshops or conferences.
+            </p>
+            <ul>
+                <li><strong>Deep Learning Foundations:</strong> Solid understanding of neural network architectures (CNNs, RNNs) and optimization. <strong>Crucial:</strong> You must be intimately familiar with the <strong>Transformer architecture</strong> (Self-Attention, Multi-head attention, Positional embeddings).</li>
+                <li><strong>Programming Proficiency:</strong> High proficiency in <strong>Python and PyTorch</strong> is non-negotiable. You should be comfortable managing environments, debugging tensor mismatches, and using Hugging Face libraries.</li>
+                <li><strong>Research Commitment:</strong> The <strong>Final Project</strong> has a high bar. Students must be willing to dedicate significant time outside of class to reading raw arXiv papers, writing code, and running large-scale experiments.</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
@@ -118,41 +175,67 @@
                         Hunyuan Video 1.5
                     </td>
                 </tr>
+                
                 <tr>
                     <td>Week 4</td>
                     <td>
-                        <span class="topic-tag">Guest Lecture</span><br>
-                        <span class="guest-speaker">Xingyu Fu (Princeton)</span>
-                        Topic: MLLM (benchmarks, thinking with images)<br>
-                        Reading: <a href="#">Lessons from the Trenches on Reproducible Evaluation of Language Models</a>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker">Xingyu Fu (Princeton)</span><br>
+                            Topic: MLLM (benchmarks, thinking with images)
+                        </div>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 2: Student Presentation</span>
+                            <span class="student-paper">Paper: <a href="#">Lessons from the Trenches on Reproducible Evaluation of Language Models</a></span>
+                        </div>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Week 5</td>
                     <td>
-                        <span class="topic-tag">Vision Foundation Models</span><br>
-                        <span class="guest-speaker">Didac Suris (Super Intelligence Science) - TBD</span>
-                        SAM 3<br>
-                        Dino v3 (Vision Representation)
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker">Didac Suris (Super Intelligence Science)</span><br>
+                            Topic: SAM 3 (Vision Foundation)
+                        </div>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 2: Student Presentation</span>
+                            <span class="student-paper">Paper: Dino v3 (Vision Representation)</span>
+                        </div>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Week 6</td>
                     <td>
-                        <span class="topic-tag">Autonomous Driving & Bio</span><br>
-                        <span class="guest-speaker">Wenhao (NVIDIA Scientist)</span>
-                        <a href="https://arxiv.org/abs/2511.00088">Nvidia Autonomous Driving (arXiv)</a><br>
-                        Highly accurate protein structure prediction with AlphaFold
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker">Wenhao (NVIDIA Scientist)</span><br>
+                            Topic: Nvidia, autonomous driving (<a href="https://arxiv.org/abs/2511.00088">arXiv</a>)
+                        </div>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 2: Student Presentation</span>
+                            <span class="student-paper">Paper: Highly accurate protein structure prediction with AlphaFold</span>
+                        </div>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Week 7</td>
                     <td>
-                        <span class="topic-tag">Guest Lecture</span><br>
-                        <span class="guest-speaker">Yushi Hu (Meta FAIR)</span>
-                        Topic: TBD
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker">Yushi Hu (Meta FAIR)</span><br>
+                            Topic: TBD
+                        </div>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 2: Student Presentation</span>
+                            <span class="student-paper">Paper: TBD</span>
+                        </div>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Week 8</td>
                     <td>
@@ -173,9 +256,7 @@
                     <td>Week 10</td>
                     <td>
                         <span class="topic-tag">Data & Models</span><br>
-                        Openthought<br>
-                        DataComp-LM<br>
-                        s1
+                        Openthought, DataComp-LM, s1
                     </td>
                 </tr>
                 <tr>
@@ -196,17 +277,14 @@
                     <td>Week 13</td>
                     <td>
                         <span class="topic-tag">Reasoning Paradigms</span><br>
-                        Parallel thinking<br>
-                        Latent thinking<br>
-                        Soft thinking
+                        Parallel thinking, Latent thinking, Soft thinking
                     </td>
                 </tr>
                 <tr>
                     <td>Week 14</td>
                     <td>
                         <span class="topic-tag">Hybrid Reasoning</span><br>
-                        Transfusion<br>
-                        Diffusion Forcing
+                        Transfusion, Diffusion Forcing
                     </td>
                 </tr>
                 <tr>
