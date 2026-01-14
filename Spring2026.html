@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Topics in Foundation Models</title>
+    <title>Frontiers in Foundation Models</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,41 +17,16 @@
         h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
         .header-link { font-size: 0.9em; text-decoration: none; color: #0366d6; }
         .section { margin-bottom: 30px; }
-        
-        /* Grading Box */
         .grading-box {
             background-color: #f8f9fa;
             border-left: 4px solid #0366d6;
             padding: 15px;
             margin: 20px 0;
         }
-
-        /* Prerequisites Box (Welcoming Style) */
-        .prereq-box {
-            background-color: #f0f7fb; /* Light Blue */
-            border-left: 4px solid #0366d6; /* Blue Accent */
-            padding: 15px;
-            margin: 20px 0;
-        }
-        .prereq-box h3 {
-            margin-top: 0;
-            color: #0366d6;
-            font-size: 1.1em;
-        }
-        .prereq-box ul {
-            margin-bottom: 0;
-            padding-left: 20px;
-        }
-        .prereq-box li {
-            margin-bottom: 8px;
-        }
-
-        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            font-size: 0.95em;
         }
         th, td {
             border: 1px solid #ddd;
@@ -59,45 +34,10 @@
             text-align: left;
             vertical-align: top;
         }
-        th { background-color: #f2f2f2; width: 12%; font-weight: 600; }
+        th { background-color: #f2f2f2; width: 15%; }
         tr:nth-child(even) { background-color: #f9f9f9; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
-        /* Helper classes for the schedule */
-        .topic-tag {
-            display: inline-block;
-            background: #e1ecf4;
-            color: #0366d6;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        
-        /* Session Splitter Styles */
-        .session-part {
-            margin-bottom: 12px;
-            padding-left: 10px;
-            border-left: 3px solid #ddd;
-        }
-        .part-label {
-            font-size: 0.75em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #666;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 2px;
-        }
-        .guest-speaker {
-            color: #d35400; /* Burnt orange for speakers */
-            font-weight: 700;
-        }
-        .student-paper {
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -105,27 +45,19 @@
     <a href="index.html" class="header-link">← Back to Home</a>
 
     <div class="section">
-        <h1>Advanced Topics in Foundation Models</h1>
-        <p><strong>Course Description:</strong> This seminar explores the frontier of Large Language Models (LLMs) and Multimodal Foundation Models. We move beyond standard autoregressive architectures to examine next-generation paradigms, including hierarchical reasoning, latent reasoning, diffusion-based language modeling, and reinforcement learning for reasoning. The course emphasizes both theoretical understanding and practical safety alignment, drawing heavily on recent breakthroughs in mechanism interpretability, test-time compute scaling, and agentic workflows.</p>
-    </div>
-
-    <div class="section">
-        <div class="prereq-box">
-            <h3>Who Should Enroll?</h3>
-            <p style="margin-top: 5px; margin-bottom: 10px; font-size: 0.95em;">
-                We welcome students from diverse backgrounds who are interested in learning about SOTA foundation models.
-            </p>
-            <ul>
-                <li><strong>For PhD Students:</strong> This is an excellent opportunity to read the latest literature and <strong>bring your own research</strong> into the course. You are encouraged to align the final project with your thesis or ongoing research topics.</li>
-                <li><strong>For Graduate & Undergraduate Students:</strong> If you are interested in Deep Learning and Generative AI, this course will help you get up to speed with the state-of-the-art. </li>
-                <li><strong>Technical Background:</strong> Familiarity with Deep Learning basics (Python/PyTorch) is recommended to get the most out of the course projects, but we will support students in defining projects that match their skill levels (e.g., surveys, reproductions, or novel research).</li>
-            </ul>
-        </div>
+        <h1>Frontiers in Foundation Models</h1>
+        
+        <p><strong>Course Description:</strong> This advanced graduate seminar (Advanced Topics in Foundation Models) explores the frontier of Large Language Models (LLMs) and Multimodal Foundation Models. We move beyond standard autoregressive architectures to examine next-generation paradigms, including hierarchical reasoning, latent reasoning, diffusion-based language modeling, and reinforcement learning for reasoning. The course emphasizes both theoretical understanding and practical safety alignment, drawing heavily on recent breakthroughs in mechanism interpretability, test-time compute scaling, and agentic workflows.</p>
     </div>
 
     <div class="section">
         <h2>Grading & Logistics</h2>
         <div class="grading-box">
+            <p style="font-size: 1.1em; margin-top: 0;">
+                <strong>📍 Time & Location:</strong> Friday, Periods 3 & 4 (12:10 PM - 3:10 PM) in Hill 009
+            </p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+            
             <h3>Grading Breakdown</h3>
             <ul>
                 <li><strong>Final Research Project and Presentation:</strong> 60%</li>
@@ -141,7 +73,7 @@
     </div>
 
     <div class="section">
-        <h2>Schedule (Spring 2026)</h2>
+        <h2>Schedule</h2>
         <table>
             <thead>
                 <tr>
@@ -152,162 +84,104 @@
             <tbody>
                 <tr>
                     <td>Week 1</td>
-                    <td>
-                        <span class="topic-tag">Introduction & Interpretation</span><br>
-                        Overview of Foundation Models. Safety and Interpretation.
-                    </td>
+                    <td><strong>Introduction and Logistics</strong><br>
+                    Instructor Introduction & Logistics.<br>
+                    Overview of foundation model landscape & Safety Alignment.<br>
+                    <strong>Readings:</strong><br>
+                    DeepSeek v3.2 Tech Report.<br>
+                    Selfie (Interpretation/Concept Erasure).</td>
                 </tr>
                 <tr>
                     <td>Week 2</td>
-                    <td>
-                        <span class="topic-tag">LLM Frontiers</span><br>
-                        DeepSeek-V3.2<br>
-                        Kimi-K2
-                    </td>
+                    <td><strong>Interpretation and Mechanism Analysis</strong><br>
+                    Kimi 2 (<a href="https://arxiv.org/pdf/2507.20534">arXiv</a>).<br>
+                    Circuit tracing: <a href="https://transformer-circuits.pub/2025/attribution-graphs/methods.html">Attribution Graphs</a>.</td>
                 </tr>
                 <tr>
                     <td>Week 3</td>
-                    <td>
-                        <span class="topic-tag">Video Generation</span><br>
-                        Wan (<a href="https://arxiv.org/abs/2503.20314">arXiv:2503.20314</a>)<br>
-                        Hunyuan Video 1.5
-                    </td>
+                    <td><strong>Hierarchical Reasoning and Test-Time Compute</strong><br>
+                    Hierarchical Reasoning Model (<a href="https://arxiv.org/abs/2404.02258">arXiv</a>).<br>
+                    Mixture of depth (<a href="https://arxiv.org/abs/2502.05171">arXiv</a>).<br>
+                    Scaling up Test-Time Compute with Latent Reasoning.</td>
                 </tr>
-                
                 <tr>
                     <td>Week 4</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Xingyu Fu (Princeton)</span><br>
-                            Topic: MLLM (benchmarks, thinking with images)
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: <a href="#">Lessons from the Trenches on Reproducible Evaluation of Language Models</a></span>
-                        </div>
-                    </td>
+                    <td><strong>RL Algorithms and Scaling</strong><br>
+                    Learning from intrinsic consistency and data curation. GRPO, DAPO, PPO.<br>
+                    The art of scaling reinforcement learning for LLMs (<a href="https://arxiv.org/html/2510.13786v1">arXiv</a>).</td>
                 </tr>
-
                 <tr>
                     <td>Week 5</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Didac Suris (Meta Super Intelligence Lab)</span><br>
-                            Topic: SAM 3 (Vision Foundation)
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: Dino v3 (Vision Representation)</span>
-                        </div>
-                    </td>
+                    <td><strong>RL Reward and Data</strong><br>
+                    C3R (Cross-modal Cycle Consistency as Reward). Process-reward.<br>
+                    STEPWISER: stepwise generative judges.<br>
+                    Openthoughts (<a href="https://arxiv.org/abs/2506.04178">arXiv</a>).</td>
                 </tr>
-
                 <tr>
                     <td>Week 6</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Wenhao (NVIDIA Scientist)</span><br>
-                            Topic: Nvidia, autonomous driving (<a href="https://arxiv.org/abs/2511.00088">arXiv</a>)
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: Highly accurate protein structure prediction with AlphaFold</span>
-                        </div>
-                    </td>
+                    <td><strong>Latent Thinking (Mull Tokens)</strong><br>
+                    Allocating compute time to "mull over" difficult inputs in a latent space.<br>
+                    Trade-off between inference-time compute and reasoning depth.</td>
                 </tr>
-
                 <tr>
                     <td>Week 7</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Ruoshi Liu (Amazon FAR Scientist)</span><br>
-                            Topic: Foundation Model for Robotics
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: DAPO, the art of scaling RL for LLMs</span>
-                        </div>
-                    </td>
+                    <td><strong>Parallel Thinking</strong><br>
+                    Parallel-R1, TBD.</td>
                 </tr>
-
                 <tr>
                     <td>Week 8</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Congyue Deng (MIT)</span><br>
-                            Topic: Action Representation
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: TBD</span>
-                        </div>
-                    </td>
+                    <td><strong>Diffusion Language Models</strong><br>
+                    TBD</td>
                 </tr>
-
                 <tr>
                     <td>Week 9</td>
-                    <td>
-                        <span class="topic-tag">Hierarchical Reasoning</span><br>
-                        Hierarchical Reasoning Model (arXiv)<br>
-                        Mixture of Depth (arXiv)<br>
-                        <a href="#">Scaling up Test-Time Compute with Latent Reasoning</a>
-                    </td>
+                    <td><strong>Hybrid Architectures & Long Context</strong><br>
+                    Transfusion: Merging discrete token generation with continuous diffusion.<br>
+                    Diffusion Forcing. Self challenging language model agents.<br>
+                    Long Context Memory: System 2 attention, Recursive Language Models.</td>
                 </tr>
                 <tr>
                     <td>Week 10</td>
-                    <td>
-                        <span class="topic-tag">Data & Models</span><br>
-                        Openthought, DataComp-LM, s1
-                    </td>
+                    <td><strong>Midterm Presentation</strong></td>
                 </tr>
-
                 <tr>
                     <td>Week 11</td>
-                    <td>
-                        <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
-                            <span class="guest-speaker">Yushi Hu (Meta FAIR)</span><br>
-                            Topic: Multimodal
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: <a href="#">Why Do Multi-Agent LLM Systems Fail?</a></span>
-                        </div>
-                    </td>
+                    <td><strong>Safety</strong><br>
+                    LARGO.<br>
+                    DAGR (Diversity-Aware Gradient-Guided Red-Teaming).<br>
+                    Deliberate alignment.</td>
                 </tr>
-
                 <tr>
                     <td>Week 12</td>
-                    <td>
-                        <span class="topic-tag">New Architectures</span><br>
-                        Diffusion LM: Llada, dream-7B
-                    </td>
+                    <td><strong>Deep Research Agents</strong><br>
+                    RL for open-ended research.<br>
+                    Dr. Tulu: RL with Evolving Rubrics. The "RLER" loop.</td>
                 </tr>
                 <tr>
                     <td>Week 13</td>
-                    <td>
-                        <span class="topic-tag">Reasoning Paradigms</span><br>
-                        Parallel thinking, Latent thinking, Soft thinking
-                    </td>
+                    <td><strong>Formal Verification & Math & Coding</strong><br>
+                    Grounding LLM reasoning in formal logic. Goedel-LM.<br>
+                    AlphaProof.<br>
+                    Using the Lean compiler as the ultimate reward model.</td>
                 </tr>
                 <tr>
                     <td>Week 14</td>
-                    <td>
-                        <span class="topic-tag">Hybrid Reasoning</span><br>
-                        Transfusion, Diffusion Forcing
-                    </td>
+                    <td><strong>Video & World Models Visual Tokenization</strong><br>
+                    Wan: Video Generation (<a href="https://arxiv.org/abs/2503.20314">arXiv</a>).<br>
+                    Compressing video into discrete or continuous tokens.<br>
+                    DeltaTok. RAE. Diffusion Forcing.</td>
                 </tr>
                 <tr>
                     <td>Week 15</td>
-                    <td>
-                        <span class="topic-tag">Final</span><br>
-                        <strong>Final Project Presentations</strong>
-                    </td>
+                    <td><strong>Guest Lectures</strong><br>
+                    Wenhao Ding (NVIDIA Research)<br>
+                    Xingyu Fu<br>
+                    Didac Suris (SAM3, Super Intelligence Lab)<br>
+                    Sachit Menon</td>
+                </tr>
+                <tr>
+                    <td>Week 16</td>
+                    <td><strong>Final Presentations</strong></td>
                 </tr>
             </tbody>
         </table>
