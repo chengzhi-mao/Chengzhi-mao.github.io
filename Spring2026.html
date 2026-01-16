@@ -59,7 +59,7 @@
             text-align: left;
             vertical-align: top;
         }
-        th { background-color: #f2f2f2; width: 12%; font-weight: 600; }
+        th { background-color: #f2f2f2; width: 15%; font-weight: 600; }
         tr:nth-child(even) { background-color: #f9f9f9; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -74,6 +74,13 @@
             font-size: 0.85em;
             margin-bottom: 6px;
             font-weight: 600;
+        }
+        .date-sub {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 4px;
+            font-weight: normal;
         }
         
         /* Session Splitter Styles */
@@ -156,14 +163,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Week 1</td>
+                    <td>Week 1<span class="date-sub">Jan 23</span></td>
                     <td>
                         <span class="topic-tag">Introduction & Interpretation</span><br>
                         Overview of Foundation Models. Safety and Interpretation.
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 2</td>
+                    <td>Week 2<span class="date-sub">Jan 30</span></td>
                     <td>
                         <span class="topic-tag">LLM Frontiers</span><br>
                         DeepSeek-V3.2<br>
@@ -171,91 +178,97 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 3</td>
+                    <td>Week 3<span class="date-sub">Feb 6</span></td>
                     <td>
-                        <span class="topic-tag">Video Generation</span><br>
-                        Wan (<a href="https://arxiv.org/abs/2503.20314">arXiv:2503.20314</a>)<br>
-                        Hunyuan Video 1.5
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: Wan (<a href="https://arxiv.org/abs/2503.20314">arXiv:2503.20314</a>)</span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker">Sachit Menon</span><br>
+                            Topic: Video Generation
+                        </div>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>Week 4</td>
+                    <td>Week 4<span class="date-sub">Feb 13</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: <a href="#">Lessons from the Trenches on Reproducible Evaluation of Language Models</a></span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Xingyu Fu (Princeton)</span><br>
                             Topic: MLLM (benchmarks, thinking with images)
                         </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: <a href="#">Lessons from the Trenches on Reproducible Evaluation of Language Models</a></span>
-                        </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 5</td>
+                    <td>Week 5<span class="date-sub">Feb 20</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: Dino v3 (Vision Representation)</span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Didac Suris (Meta Super Intelligence Lab)</span><br>
                             Topic: SAM 3 (Vision Foundation)
                         </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: Dino v3 (Vision Representation)</span>
-                        </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 6</td>
+                    <td>Week 6<span class="date-sub">Feb 27</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: Highly accurate protein structure prediction with AlphaFold</span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Wenhao (NVIDIA Scientist)</span><br>
                             Topic: Nvidia, autonomous driving (<a href="https://arxiv.org/abs/2511.00088">arXiv</a>)
                         </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: Highly accurate protein structure prediction with AlphaFold</span>
-                        </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 7</td>
+                    <td>Week 7<span class="date-sub">Mar 6</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: DAPO, the art of scaling RL for LLMs</span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Ruoshi Liu (Amazon FAR Scientist)</span><br>
                             Topic: Foundation Model for Robotics
                         </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: DAPO, the art of scaling RL for LLMs</span>
-                        </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 8</td>
+                    <td>Week 8<span class="date-sub">Mar 13</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: TBD</span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Congyue Deng (MIT)</span><br>
                             Topic: Action Representation
                         </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: TBD</span>
-                        </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 9</td>
+                    <td>Week 9<span class="date-sub">Mar 20</span></td>
                     <td>
                         <span class="topic-tag">Hierarchical Reasoning</span><br>
                         Hierarchical Reasoning Model (arXiv)<br>
@@ -264,7 +277,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 10</td>
+                    <td>Week 10<span class="date-sub">Mar 27</span></td>
                     <td>
                         <span class="topic-tag">Data & Models</span><br>
                         Openthought, DataComp-LM, s1
@@ -272,43 +285,43 @@
                 </tr>
 
                 <tr>
-                    <td>Week 11</td>
+                    <td>Week 11<span class="date-sub">Apr 3</span></td>
                     <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: <a href="#">Why Do Multi-Agent LLM Systems Fail?</a></span>
+                        </div>
                         <div class="session-part" style="border-left-color: #d35400;">
-                            <span class="part-label">Part 1: Guest Lecture (1 hr)</span>
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
                             <span class="guest-speaker">Yushi Hu (Meta FAIR)</span><br>
                             Topic: Multimodal
-                        </div>
-                        <div class="session-part" style="border-left-color: #0366d6;">
-                            <span class="part-label">Part 2: Student Presentation</span>
-                            <span class="student-paper">Paper: <a href="#">Why Do Multi-Agent LLM Systems Fail?</a></span>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Week 12</td>
+                    <td>Week 12<span class="date-sub">Apr 10</span></td>
                     <td>
                         <span class="topic-tag">New Architectures</span><br>
                         Diffusion LM: Llada, dream-7B
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 13</td>
+                    <td>Week 13<span class="date-sub">Apr 17</span></td>
                     <td>
                         <span class="topic-tag">Reasoning Paradigms</span><br>
                         Parallel thinking, Latent thinking, Soft thinking
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 14</td>
+                    <td>Week 14<span class="date-sub">Apr 24</span></td>
                     <td>
                         <span class="topic-tag">Hybrid Reasoning</span><br>
                         Transfusion, Diffusion Forcing
                     </td>
                 </tr>
                 <tr>
-                    <td>Week 15</td>
+                    <td>Week 15<span class="date-sub">May 1</span></td>
                     <td>
                         <span class="topic-tag">Final</span><br>
                         <strong>Final Project Presentations</strong>
