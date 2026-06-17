@@ -171,7 +171,7 @@
       {
         "year": "2026",
         "thumb": "assets/img/papers/lace.png",
-        "title": "LACE: Lattice Attention for Cross-thread Exploration",
+        "title": "LACE: Lattice Attention for Cross-Thread Exploration",
         "authors": "Yang Li, Zirui Zhang, Yang Liu, **Chengzhi Mao**",
         "venue": "arXiv 2026",
         "venue_award": false,
