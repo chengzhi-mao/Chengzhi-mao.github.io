@@ -467,7 +467,10 @@
     "heading": "Teaching",
     "items": [
       {
-        "html": "<strong>New Course:</strong> <a href=\"Spring2026.html\">Advanced Topics in Foundation Models</a>"
+        "html": "<strong>Undergraduate Course:</strong> <a href=\"Spring2026.html\">Introduction to Deep Learning</a>"
+      },
+      {
+        "html": "<strong>Graduate Course:</strong> <a href=\"Spring2026.html\">Advanced Topics in Foundation Models</a>"
       }
     ]
   },
