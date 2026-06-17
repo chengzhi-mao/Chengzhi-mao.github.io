@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontiers in Foundation Models</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        .header-link { font-size: 0.9em; text-decoration: none; color: #0366d6; }
+        .section { margin-bottom: 30px; }
+        
+        /* Grading Box */
+        .grading-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0366d6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        /* Prerequisites Box (Welcoming Style) */
+        .prereq-box {
+            background-color: #f0f7fb; /* Light Blue */
+            border-left: 4px solid #0366d6; /* Blue Accent */
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .prereq-box h3 {
+            margin-top: 0;
+            color: #0366d6;
+            font-size: 1.1em;
+        }
+        .prereq-box ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .prereq-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background-color: #f2f2f2; width: 15%; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        /* Special Row for Recess */
+        .recess-row { background-color: #fff3cd !important; color: #856404; }
+        
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* Helper classes for the schedule */
+        .topic-tag {
+            display: inline-block;
+            background: #e1ecf4;
+            color: #0366d6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .date-sub {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 4px;
+            font-weight: normal;
+        }
+        
+        /* Session Splitter Styles */
+        .session-part {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #ddd;
+        }
+        .part-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .guest-speaker {
+            color: #d35400; /* Burnt orange for speakers */
+            font-weight: 700;
+        }
+        .student-paper {
+            font-style: italic;
+        }
+
+        /* NEW: Slides Box */
+        .slides-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2c3e50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .slides-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="header-link">← Back to Home</a>
+
+    <div class="section">
+        <h1>Frontiers in Foundation Models</h1>
+        <p><strong>Course Description:</strong> This seminar (Frontiers in Foundation Models) explores the frontier of Large Language Models (LLMs) and next-generation multimodal foundation models. We move beyond standard autoregressive language modeling to study how modern systems integrate <em>text, vision, video, code, and action</em> to enable grounded reasoning and real-world decision making. Topics include multimodal reasoning and evaluation, vision representation learning and segmentation, video generation, foundation models for robotics, and action-centric representation learning. We also cover emerging paradigms such as hierarchical and latent reasoning, diffusion-based language modeling, reinforcement learning for reasoning, and agentic workflows. Throughout the course, we emphasize both mechanistic understanding and practical safety alignment, connecting recent advances in interpretability, test-time compute scaling, and robust evaluation to hands-on paper presentations and open-ended research projects.</p>
+    </div>
+
+    <div class="section">
+        <div class="slides-box">
+            <h3>Course Slides</h3>
+            <ul style="margin: 0; padding-left: 20px;">
+                <li><strong>Class 1:</strong> <a href="class1.pdf">Slides (PDF)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="prereq-box">
+            <h3>Who Should Enroll?</h3>
+            <p style="margin-top: 5px; margin-bottom: 10px; font-size: 0.95em;">
+                We welcome students from diverse backgrounds who are interested in learning about SOTA foundation models.
+            </p>
+            <ul>
+                <li><strong>For PhD Students:</strong> This is an excellent opportunity to read the latest literature and <strong>bring your own research</strong> into the course. You are encouraged to align the final project with your thesis or ongoing research topics.</li>
+                <li><strong>For Graduate & Undergraduate Students:</strong> If you are interested in Deep Learning and Generative AI, this course will help you get up to speed with the state-of-the-art. </li>
+                <li><strong>Technical Background:</strong> Familiarity with Deep Learning basics (Python/PyTorch) is recommended to get the most out of the course projects, but we will support students in defining projects that match their skill levels (e.g., surveys, reproductions, or novel research).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Grading & Logistics</h2>
+        <div class="grading-box">
+            <p style="font-size: 1.1em; margin-top: 0;">
+                <strong>📍 Time & Location:</strong> Friday, Periods 3 & 4 (12:10 PM - 3:10 PM) in Hill 009
+            </p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;">
+
+            <h3>Grading Breakdown</h3>
+            <ul>
+                <li><strong>Final Research Project and Presentation:</strong> 60%</li>
+                <li><strong>Paper Presentation & Participation:</strong> 40%
+                    <ul>
+                        <li>Slides (due 1 day before class): 10%</li>
+                        <li>Presentation Delivery: 20%</li>
+                        <li>Daily Participation: 10%</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Schedule (Spring 2026)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Topic & Readings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Week 1<span class="date-sub">Jan 23</span></td>
+                    <td>
+                        <span class="topic-tag">Introduction & Interpretation</span><br>
+                        Overview of Foundation Models. Safety and Interpretation.<br>
+                        Reading: <a href="https://selfie.cs.columbia.edu">SELFIE</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Week 2<span class="date-sub">Jan 30</span></td>
+                    <td>
+                        <span class="topic-tag">LLM Frontiers</span><br>
+                        <a href="https://arxiv.org/abs/2512.02556">DeepSeek-V3.2</a><br>
+                        <a href="https://arxiv.org/pdf/2507.20534">Kimi-K2</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Week 3<span class="date-sub">Feb 6</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: <a href="https://arxiv.org/abs/2508.10104">Dino v3</a></span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker"><a href="https://zeyofu.github.io">Xingyu Fu (Princeton)</a></span><br>
+                            Topic: MLLM (benchmarks, thinking with images)
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Week 4<span class="date-sub">Feb 13</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Guest Lecture (Starts 2:00 PM)</span>
+                            <span class="guest-speaker"><a href="http://www.didacsuris.com">Didac Suris (Meta Super Intelligence Lab)</a></span><br>
+                            Topic: SAM 3 (Vision Foundation)
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 5<span class="date-sub">Feb 20</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation</span>
+                            <span class="student-paper">Paper: <a href="#">Why Do Multi-Agent LLM Systems Fail?</a></span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Guest Lecture (Starts 1:40 PM)</span>
+                            <span class="guest-speaker"><a href="https://sachit-menon.github.io">Sachit Menon (Columbia University)</a></span><br>
+                            Topic: Multimodal Reasoning with Code Generation
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 6<span class="date-sub">Feb 27</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Guest Lecture (Starts 1:40 PM)</span>
+                            <span class="guest-speaker"><a href="https://wenhao.pub">Wenhao Ding (NVIDIA Scientist)</a></span><br>
+                            Topic: Accelerating the Development and Deployment of Reasoning Models for Physical AI
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 7<span class="date-sub">Mar 6</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Aparajita)</span>
+                            <span class="student-paper">Paper: <a href="https://arxiv.org/abs/2406.11794">DataComp-LM: In search of the next generation of training sets for language models</a></span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker"><a href="https://ruoshiliu.github.io">Ruoshi Liu (Amazon FAR Scientist)</a></span><br>
+                            Topic: Foundation Model for Robotics
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 8<span class="date-sub">Mar 13</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker"><a href="https://congyue-deng.github.io">Congyue Deng (MIT)</a></span><br>
+                            Topic: Action Representation
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="recess-row">
+                    <td>Spring Recess<span class="date-sub">Mar 20</span></td>
+                    <td>
+                        <strong>NO CLASS</strong><br>
+                        Rutgers Spring Recess (March 14 - March 22)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 9<span class="date-sub">Mar 27</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Alborz)</span>
+                            <span class="student-paper">Paper: SAT Solvers in LLMs</span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Student Presentation (Sinchana)</span>
+                            <span class="student-paper">Paper: Wan</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Week 10<span class="date-sub">Apr 3</span></td>
+                    <td>
+                        <<div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Qiwei Zhao)</span>
+                            <span class="student-paper">Paper: TBD</span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Student Presentation (Prajwal)</span>
+                            <span class="student-paper">Paper: ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 11<span class="date-sub">Apr 10</span></td>
+                    <td>
+                        <div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Pranika)</span>
+                            <span class="student-paper">Paper: OpenThoughts (<a href="https://arxiv.org/abs/2506.04178">arXiv:2506.04178</a>), https://www.open-thoughts.ai/, https://www.openthoughts.ai/blog/ot3, </span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Guest Lecture (1 hr)</span>
+                            <span class="guest-speaker"><a href="https://yushi-hu.github.io">Yushi Hu (Meta FAIR)</a></span><br>
+                            Topic: Multimodal
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Week 12<span class="date-sub">Apr 17</span></td>
+                    <td>
+                        <<div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Varun)</span>
+                            <span class="student-paper">Paper: https://arxiv.org/pdf/2406.07524</span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Student Presentation (Harsha)</span>
+                            <span class="student-paper">Paper: World Models - NVIDIA Cosmos 2.5 </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Week 13<span class="date-sub">Apr 24</span></td>
+                    <td>
+                        <<div class="session-part" style="border-left-color: #0366d6;">
+                            <span class="part-label">Part 1: Student Presentation (Lokesh Kota)</span>
+                            <span class="student-paper">Paper: The Art of Scaling RL for LLMs</span>
+                        </div>
+                        <div class="session-part" style="border-left-color: #d35400;">
+                            <span class="part-label">Part 2: Student Presentation (Santhosh)</span>
+                            <span class="student-paper">Paper: TBD</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Week 14<span class="date-sub">May 1</span></td>
+                    <td>
+                        <span class="topic-tag">Final</span><br>
+                        <strong>Final Project Presentations</strong><br>
+                        <span style="font-size:0.9em; color:#666;">(Last day of Regular Classes)</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <a href="index.html" class="header-link">← Back to Home</a>
+    <br><br>
+
+</body>
+</html>
