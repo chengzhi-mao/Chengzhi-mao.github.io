@@ -109,12 +109,12 @@
     ]
   },
   "students": {
-    "heading": "PhD Students and Postdocs",
+    "heading": "Students",
     "items": [
       {
         "name": "Yang Li",
         "role": "PhD Student",
-        "url": ""
+        "url": "https://yangmarino.li"
       },
       {
         "name": "Yuan Qing",
@@ -124,11 +124,16 @@
       {
         "name": "Yibin Wang",
         "role": "PhD Student",
-        "url": ""
+        "url": "https://yibinwang.netlify.app"
       },
       {
         "name": "Zirui Zhang",
         "role": "PhD Student",
+        "url": ""
+      },
+      {
+        "name": "Shilong Xiang",
+        "role": "Research Assistant",
         "url": ""
       }
     ]
