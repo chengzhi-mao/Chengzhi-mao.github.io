@@ -47,6 +47,14 @@
     "heading": "News",
     "items": [
       {
+        "date": "Jun 2026",
+        "html": "Paper APPLV is accepted to IROS 2026."
+      },
+      {
+        "date": "June 2026",
+        "html": "Congratulations to Yuan's ECCV 2026 paper."
+      },
+      {
         "date": "Feb 2026",
         "html": "Congratulations to Qihao and collaborators! Our paper on LLM-based model <strong>auditing</strong> has been selected as a <span class=\"award\">Highlight</span>."
       },
