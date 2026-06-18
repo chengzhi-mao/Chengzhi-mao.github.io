@@ -155,6 +155,20 @@
     "papers": [
       {
         "year": "2026",
+        "thumb": "assets/img/papers/applv.png",
+        "title": "APPLV: Adaptive Planner Parameter Learning from Vision-Language-Action Model",
+        "authors": "Yuanjie Lu, Beichen Wang, Zhengqi Wu, Yang Li, Xiaomin Lin, **Chengzhi Mao**, Xuesu Xiao",
+        "venue": "IROS 2026",
+        "venue_award": false,
+        "links": [
+          {
+            "label": "paper",
+            "url": "https://arxiv.org/pdf/2603.08862"
+          }
+        ]
+      },
+      {
+        "year": "2026",
         "thumb": "assets/img/papers/scope.png",
         "title": "S2COPE: Self-Supervised Concept Discovery via Preference Learning",
         "authors": "Shilong Xiang, Zirui Zhang, **Chengzhi Mao**",
