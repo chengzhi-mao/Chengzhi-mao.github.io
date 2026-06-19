@@ -155,6 +155,20 @@
     "papers": [
       {
         "year": "2026",
+        "thumb": "assets/img/papers/SSD.png",
+        "title": "SSD: Spatially Speculative Decoding Accelerates Autoregressive Image Generation",
+        "authors": "Shilong Xiang, Zirui Zhang, Lijun Yu, **Chengzhi Mao**",
+        "venue": "arXiv",
+        "venue_award": false,
+        "links": [
+          {
+            "label": "paper",
+            "url": "https://arxiv.org/pdf/2606.20543"
+          }
+        ]
+      },
+      {
+        "year": "2026",
         "thumb": "assets/img/papers/stochasticT.png",
         "title": "StochasT : Learning with Stochastic Turn Depth for Visual Instruction Tuning",
         "authors": "Yuan Qing, **Chengzhi Mao**, Boqing Gong",
