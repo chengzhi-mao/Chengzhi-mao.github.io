@@ -228,6 +228,10 @@
           {
             "label": "paper",
             "url": "https://arxiv.org/pdf/2512.16921"
+          },
+          {
+            "label": "project page",
+            "url": "https://auditdm.github.io/"
           }
         ]
       },
@@ -258,6 +262,10 @@
             "url": "https://arxiv.org/html/2603.25720v1"
           },
           {
+            "label": "code",
+            "url": "https://github.com/Zirui00/R-C2"
+          },
+          {
             "label": "project page",
             "url": "https://zirui00.github.io/RC2-Project-Page/"
           }
@@ -274,6 +282,14 @@
           {
             "label": "paper",
             "url": "https://arxiv.org/pdf/2512.10941"
+          },
+          {
+            "label": "code",
+            "url": "https://github.com/arijitray1993/mull"
+          },
+          {
+            "label": "project page",
+            "url": "https://arijitray.com/multimodal_thinking/"
           }
         ]
       },
