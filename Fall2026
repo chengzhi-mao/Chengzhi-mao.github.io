@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intro to Deep Learning — Rutgers Fall 2026 Syllabus</title>
+  <style>
+    :root {
+      --rutgers-red: #cc0033;
+      --ink: #1d1d1f;
+      --muted: #5f6673;
+      --line: #d7dbe3;
+      --soft: #f6f7f9;
+      --soft-red: #fff2f5;
+      --soft-blue: #eef5ff;
+      --accent: #243b53;
+      --ok: #176f3d;
+      --warn: #8a4b00;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      background: #fff;
+    }
+    a { color: var(--rutgers-red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 28px 24px 64px; }
+    header.hero {
+      border: 1px solid var(--line);
+      border-top: 8px solid var(--rutgers-red);
+      border-radius: 18px;
+      padding: 32px;
+      background: linear-gradient(180deg, #fff, #fbfbfd);
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+    .eyebrow { color: var(--rutgers-red); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; }
+    h1 { margin: 8px 0 12px; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.05; }
+    h2 { margin: 36px 0 14px; font-size: 1.65rem; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+    h3 { margin: 24px 0 10px; font-size: 1.22rem; }
+    h4 { margin: 14px 0 8px; font-size: 1.05rem; }
+    .subtitle { color: var(--muted); font-size: 1.15rem; max-width: 900px; }
+    .tagline {
+      margin: 22px 0 0;
+      padding: 14px 18px;
+      border-left: 5px solid var(--rutgers-red);
+      background: var(--soft-red);
+      font-weight: 700;
+      border-radius: 8px;
+    }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fff;
+    }
+    .card.soft { background: var(--soft); }
+    .card.red { background: var(--soft-red); border-color: #f0b8c4; }
+    .card.blue { background: var(--soft-blue); border-color: #bed7ff; }
+    .card h3:first-child, .card h4:first-child { margin-top: 0; }
+    .meta {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 8px 16px;
+      margin-top: 18px;
+    }
+    .meta dt { font-weight: 800; color: var(--accent); }
+    .meta dd { margin: 0; }
+    nav.toc {
+      margin: 24px 0 4px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+    nav.toc a { margin-right: 18px; white-space: nowrap; font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; margin: 14px 0 24px; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
+    th { background: #f1f3f6; text-align: left; color: var(--accent); }
+    tr.exam { background: #fff7e8; }
+    tr.makeup { background: #f8fbff; }
+    tr.review { background: #f6fff8; }
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: #fff;
+      margin: 0 5px 5px 0;
+      white-space: nowrap;
+    }
+    .pill.core { border-color: #bdd7c4; background: #f2fff5; color: var(--ok); }
+    .pill.frontier { border-color: #ffdca8; background: #fff8ed; color: var(--warn); }
+    .pill.exam { border-color: #f0b8c4; background: var(--soft-red); color: var(--rutgers-red); }
+    ul, ol { padding-left: 1.3rem; }
+    li { margin: .35rem 0; }
+    .note { color: var(--muted); font-size: .96rem; }
+    .warning {
+      border: 2px solid var(--rutgers-red);
+      background: var(--soft-red);
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin: 14px 0 22px;
+    }
+    .warning strong { color: var(--rutgers-red); }
+    .small { font-size: .9rem; }
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      background: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .week-detail {
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .week-detail summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 850;
+      background: #f7f8fa;
+    }
+    .week-detail div { padding: 4px 18px 18px; }
+    footer {
+      margin-top: 42px;
+      border-top: 2px solid var(--line);
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    pre { background: #101418; color: #f5f7fa; padding: 16px; border-radius: 12px; overflow-x: auto; }
+    @media (max-width: 840px) {
+      .grid.two, .grid.three { grid-template-columns: 1fr; }
+      .meta { grid-template-columns: 1fr; }
+      table { font-size: .9rem; }
+      th, td { padding: 8px; }
+    }
+    @media print {
+      body { font-size: 11pt; }
+      .page { max-width: none; padding: 0; }
+      header.hero, .card, .warning, nav.toc, .week-detail { box-shadow: none; break-inside: avoid; }
+      nav.toc { display: none; }
+      a { color: #000; text-decoration: underline; }
+      .week-detail { display: block; }
+      .week-detail summary { list-style: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="eyebrow">Rutgers University · Fall 2026 · Draft syllabus</div>
+      <h1>Intro to Deep Learning: Demo-First Foundations to Frontier AI</h1>
+      <p class="subtitle">
+        A Friday 3-hour undergraduate course for students with little or no deep learning background. The course starts each topic with a working demo and live Claude Code / PyTorch interaction, then reverse-engineers the math, systems, and modeling ideas behind the demo.
+      </p>
+      <p class="tagline">Unifying question: <em>How do we get more useful information from each data point?</em> Gradients, convolutions, attention, augmentation, contrastive objectives, latent variables, distillation, RL, memory systems, and interpretability are all different answers to this question.</p>
+      <dl class="meta">
+        <dt>Course title</dt><dd>Intro to Deep Learning</dd>
+        <dt>Meeting pattern</dt><dd>Assumed Friday 2:00–5:00 p.m. standard 180-minute slot, plus the Rutgers-designated Friday-class meeting on Wednesday, November 25, 2026. If the department assigns a different Friday slot, keep the weekly topic order and revise the final exam time from the official exam grid.</dd>
+        <dt>Instructor</dt><dd>[Instructor Name], [email], [office], [office hours]</dd>
+        <dt>Classroom</dt><dd>[Room / campus]. A projector and instructor coding machine are required; student laptops are useful for coding weeks but not required for graded work.</dd>
+        <dt>Prerequisites</dt><dd>No prior deep learning course assumed. Basic Python exposure is helpful. The course introduces tensors, gradients, PyTorch, neural networks, and transformer vocabulary from scratch.</dd>
+        <dt>Required materials</dt><dd>Paper notebook and pen for every class. On exam days, paper notes/books/printouts are allowed; electronics are not.</dd>
+      </dl>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#design">Design</a>
+      <a href="#outcomes">Learning outcomes</a>
+      <a href="#grading">Grading</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#weekly">Weekly details</a>
+      <a href="#exam-prep">Exam preparation</a>
+      <a href="#policies">Policies</a>
+      <a href="#references">References</a>
+    </nav>
+
+    <section id="design">
+      <h2>Course design</h2>
+      <div class="grid three">
+        <div class="card blue">
+          <h3>Demo first</h3>
+          <p>Every technical unit begins with a visible artifact: a classifier learning, an attention map, BPE token IDs, a tiny GPT generating text, MNIST reconstructions, a diffusion denoising path, or a toy adversarial attack.</p>
+        </div>
+        <div class="card blue">
+          <h3>Then details</h3>
+          <p>After the demo works, the class unpacks the details: shapes, gradients, loss functions, optimization, data assumptions, inductive bias, compute/memory bottlenecks, and failure modes.</p>
+        </div>
+        <div class="card blue">
+          <h3>Paper notebook culture</h3>
+          <p>Slides are not the main artifact. Students build a paper reference manual in class. Missing class means learning from another student’s notes.</p>
+        </div>
+      </div>
+
+      <h3>Default 3-hour class rhythm</h3>
+      <table>
+        <thead><tr><th>Time</th><th>Activity</th><th>Instructor purpose</th></tr></thead>
+        <tbody>
+          <tr><td>0:00–0:15</td><td>Motivating question, quick recap, what students must be able to do on paper.</td><td>Anchor the day’s vocabulary and exam-relevant skill.</td></tr>
+          <tr><td>0:15–0:55</td><td>Live demo / vibe coding with Claude Code and PyTorch.</td><td>Show the working system before formalizing it.</td></tr>
+          <tr><td>0:55–1:25</td><td>Whiteboard derivation and tensor-shape tracing.</td><td>Convert the demo into equations and diagrams.</td></tr>
+          <tr><td>1:25–1:35</td><td>Break.</td><td>Reset attention.</td></tr>
+          <tr><td>1:35–2:25</td><td>Implementation deep dive: read code, fix bugs, instrument activations, visualize outputs.</td><td>Teach debugging and model inspection.</td></tr>
+          <tr><td>2:25–2:50</td><td>Frontier connection or paper critique.</td><td>Connect foundations to current deep learning systems.</td></tr>
+          <tr><td>2:50–3:00</td><td>In-class task and notebook checkpoint.</td><td>Attendance + immediate retrieval practice. Not homework.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>How Claude Code is used</h3>
+      <p>Claude Code is used as an instructor-operated live coding partner, not as a replacement for understanding. Typical prompts will ask it to scaffold a PyTorch file, add printouts for tensor shapes, generate small tests, convert equations into code, debug an error, or refactor a notebook into a readable script. Students are expected to critique the output: What is correct? What is hidden? What is inefficient? What would fail on a real dataset?</p>
+      <p class="note">No student needs a paid AI account for graded work. All graded assessment is paper-based.</p>
+    </section>
+
+    <section id="outcomes">
+      <h2>Learning outcomes</h2>
+      <p>By the end of the course, students should be able to:</p>
+      <ol>
+        <li>Trace the data path through tensors, embeddings, MLPs, CNNs, residual blocks, attention heads, ViTs, VAEs, diffusion models, and small transformer LMs.</li>
+        <li>Explain gradient descent, backpropagation, loss functions, overfitting, generalization, robustness, and spurious correlation using equations and diagrams.</li>
+        <li>Read small PyTorch programs and identify what the model, loss, optimizer, and training loop are doing.</li>
+        <li>Derive and interpret the VAE ELBO at a high level, and compare likelihood, reconstruction, contrastive, preference, RL, and distribution-matching objectives.</li>
+        <li>Explain transformer mechanics: BPE tokenization, embeddings, Q/K/V attention, positional encodings including RoPE, KV cache, grouped-query / multi-query attention, and why FlashAttention reduces IO.</li>
+        <li>Compare major generative model families: autoregressive models, VAEs, VQ-VAEs, normalizing flows, rectified/mean flows, diffusion, diffusion distillation, and video generation forcing methods.</li>
+        <li>Give a technically grounded one-paragraph explanation of frontier ideas: MoE, CLIP/SigLIP, RAE, Transfusion, UniFluid, VLA/WAM, world models, agent models, SAE/transcoders/crosscoders, and inference systems.</li>
+      </ol>
+    </section>
+
+    <section id="grading">
+      <h2>Grading and assessment</h2>
+      <div class="grid two">
+        <div class="card red">
+          <h3>Course grade</h3>
+          <table>
+            <thead><tr><th>Assessment</th><th>Weight</th><th>Format</th></tr></thead>
+            <tbody>
+              <tr><td>Midterm exam</td><td>50%</td><td>In class, paper, open paper materials, no electronics.</td></tr>
+              <tr><td>Final exam</td><td>50%</td><td>Registrar-scheduled final exam, paper, open paper materials, no electronics.</td></tr>
+              <tr><td>Homework</td><td>0%</td><td>No written homework is collected or graded.</td></tr>
+              <tr><td>In-class tasks</td><td>0%</td><td>Used for attendance and practice, not as a grade component.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card red">
+          <h3>Exam scoring rule</h3>
+          <p>Unless a question explicitly states a different rubric:</p>
+          <ul>
+            <li><strong>Correct answer:</strong> 100% of the item.</li>
+            <li><strong>Blank / empty answer:</strong> 20% of the item.</li>
+            <li><strong>Wrong answer:</strong> 0% of the item.</li>
+          </ul>
+          <p>This rewards calibrated uncertainty. Students should not bluff. Leave a part blank if you cannot support the answer.</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>Exam materials policy.</strong> Students may bring any amount of paper content: handwritten notes, printed code, printed papers, books, diagrams, and formula sheets. Students may not use phones, laptops, tablets, smartwatches, earbuds, calculators, electronic dictionaries, cameras, messaging tools, cloud notes, AI models, or any other electronic device during exams, except where a Rutgers-approved accommodation requires a specific arrangement. Unauthorized electronics or AI use during an exam will be handled as an academic integrity violation under Rutgers procedures.
+      </div>
+
+      <h3>Attendance</h3>
+      <p>Attendance is recorded through short in-class tasks. These tasks are meant to make students actively process the material: draw the computation graph, compute one gradient step, write BPE merges, label Q/K/V tensor shapes, explain one failure mode, or annotate a printed code snippet. Tasks are not homework and are not a percentage of the grade.</p>
+    </section>
+
+    <section id="calendar">
+      <h2>Fall 2026 calendar-aligned schedule</h2>
+      <p><strong>Rutgers calendar facts used:</strong> Fall 2026 classes begin Tuesday, September 1; regular classes end Thursday, December 10; Friday classes meet on Wednesday, November 25; Thanksgiving recess runs Thursday, November 26 through Sunday, November 29; reading days are Friday, December 11 and Monday, December 14; fall exams run Tuesday, December 15 through Tuesday, December 22.</p>
+      <p><strong>Assumption for final exam slot:</strong> If this course is scheduled Friday 2:00–5:00 p.m. as the F45 standard 180-minute slot, the current New Brunswick Fall 2026 exam grid maps the final to <strong>Thursday, December 17, 2026, 8:00–11:00 a.m.</strong> Confirm the final time and room through the department and myRutgers/Schedule of Classes before publishing the final syllabus.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Date</th>
+            <th>Topic</th>
+            <th>Live demo / in-class task</th>
+            <th>Exam must-know</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Fri Sep 4</td>
+            <td><span class="pill core">Core</span> What is deep learning? Tensors, data, parameters, loss, gradients. The course thesis: getting more signal from each data point.</td>
+            <td>Claude Code builds a tiny classifier; students draw the data → logits → loss → gradient loop.</td>
+            <td>Define model, parameter, loss, gradient, batch, epoch, overfitting.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fri Sep 11</td>
+            <td><span class="pill core">Core</span> Gradient descent, autograd, MLPs, backpropagation, handwritten PyTorch training loop.</td>
+            <td>Implement linear regression and MLP from scratch; inspect gradients before/after one update.</td>
+            <td>Compute one SGD update; trace forward/backward pass; identify learning rate effects.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fri Sep 18</td>
+            <td><span class="pill core">Core</span> From standard convolution to CNNs and ResNets; images as tensors; local connectivity, weight sharing, residual learning.</td>
+            <td>Visualize filters and feature maps; add residual connection to a toy network.</td>
+            <td>Convolution shape math; why CNNs generalize better than dense MLPs on images; why residuals help optimization.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Fri Sep 25</td>
+            <td><span class="pill core">Core</span> Correlation learning, spurious features, robustness, adversarial examples, curse of dimensionality, Gaussian donuts.</td>
+            <td>Train on a spurious color cue, then test after cue flip; generate a small adversarial perturbation.</td>
+            <td>Explain shortcut learning, distribution shift, adversarial perturbation, high-dimensional intuition.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Fri Oct 2</td>
+            <td><span class="pill core">Core</span> BPE tokenization, embeddings, attention, transformer block, RoPE positional encoding, ViT.</td>
+            <td>Print BPE integer tokens and embedding vectors; visualize one attention head.</td>
+            <td>Calculate attention tensor shapes; explain token IDs, embeddings, Q/K/V, softmax attention, positional information.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Fri Oct 9</td>
+            <td><span class="pill core">Core</span> NanoGPT in class: train a tiny Shakespeare model; generation; transformer systems intro: KV cache, grouped KV, MoE, gradient checkpointing, FlashAttention.</td>
+            <td>Run NanoGPT-style mini training; inspect generated text; compare prefill vs decode.</td>
+            <td>Autoregressive loss; causal mask; KV cache purpose; why attention is memory/IO heavy.</td>
+          </tr>
+          <tr class="exam">
+            <td>7</td>
+            <td>Fri Oct 16</td>
+            <td><span class="pill exam">Midterm</span> In-class midterm exam, 50% of course grade.</td>
+            <td>Paper exam. Unlimited paper materials. No electronics or AI.</td>
+            <td>Weeks 1–6.</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Fri Oct 23</td>
+            <td><span class="pill core">Core</span> Self-supervised representation learning: SimCLR, triplet loss, contrastive learning, Siamese trivial solution, CLIP, SigLIP, distillation, GKD/OPD.</td>
+            <td>Build two augmented views; compute contrastive similarities; show collapse in a naive Siamese objective.</td>
+            <td>Positive/negative pairs; temperature; trivial solution; image-text alignment; teacher-student distillation.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Fri Oct 30</td>
+            <td><span class="pill core">Core</span> Probabilistic generative models: ELBO derivation, VAE, VQ-VAE, latent bottlenecks, why VAEs/dimensionality reduction matter for image/video generation.</td>
+            <td>Train a small MNIST VAE; interpolate latent codes; compare reconstruction vs sampling.</td>
+            <td>ELBO terms; encoder/decoder; reparameterization trick; reconstruction vs KL; latent compression.</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Fri Nov 6</td>
+            <td><span class="pill core">Core</span> Diffusion and flows: denoising objective, DDPM intuition, score matching, normalizing flows, rectified flow, MeanFlow, DMD and one-step/few-step generation.</td>
+            <td>Animate noise → image denoising on 2D toy data; compare iterative sampling to one-step distillation.</td>
+            <td>Forward noising; reverse denoising; score; FID intuition; flow vs diffusion; distribution matching.</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Fri Nov 13</td>
+            <td><span class="pill frontier">Frontier</span> Video and unified multimodal generation: long-video challenge, teacher forcing, diffusion forcing, self forcing, causal forcing, RAE, Transfusion, UniFluid, Janus-style unified models.</td>
+            <td>Sketch error accumulation in autoregressive video; discuss why low-dimensional video latents are necessary.</td>
+            <td>Teacher forcing vs exposure bias; why video is harder than images; continuous vs discrete tokens; unified modeling trade-offs.</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Fri Nov 20</td>
+            <td><span class="pill core">Core</span> Reinforcement learning and post-training: RL, policy, reward, RLHF, DPO, GRPO, preference learning, alignment, agent evaluation.</td>
+            <td>Paper game: students act as policy, reward model, preference judge, optimizer; derive why preference pairs can train behavior.</td>
+            <td>Policy/reward/value; preference data; DPO idea; GRPO group baseline idea; why post-training changes behavior.</td>
+          </tr>
+          <tr class="makeup">
+            <td>13</td>
+            <td>Wed Nov 25<br><span class="small">Rutgers Friday classes</span></td>
+            <td><span class="pill frontier">Frontier</span> World models, agent models, Physical AI, VLA/WAM, System A/B/M, and critique of “agentic” claims.</td>
+            <td>Structured in-class debate: Is the model predicting the world, choosing actions, or both? Students annotate printed abstracts.</td>
+            <td>Distinguish world model vs policy/agent model; VLA vs WAM; why long-horizon physical prediction is difficult.</td>
+          </tr>
+          <tr class="review">
+            <td>14</td>
+            <td>Fri Dec 4</td>
+            <td><span class="pill core">Core</span> Interpretability and systems wrap: SAE, transcoders, crosscoders, SelfIE, HBM vs SRAM, FlashAttention-3 intuition, ring attention, LRU/KV cache strategies, distributed inference.</td>
+            <td>Draw an LLM inference memory map; identify what lives in HBM/SRAM/cache; interpret one toy SAE feature.</td>
+            <td>Why interpretability is hard; what SAEs/transcoders/crosscoders try to factorize; how memory bandwidth constrains LLM inference.</td>
+          </tr>
+          <tr class="exam">
+            <td>Final</td>
+            <td>Thu Dec 17<br><span class="small">Assuming Friday F45 slot</span></td>
+            <td><span class="pill exam">Final Exam</span> Registrar-scheduled final exam, 50% of course grade.</td>
+            <td>Paper exam. Unlimited paper materials. No electronics or AI.</td>
+            <td>Cumulative, with emphasis on Weeks 8–14. Suggested split: 30% cumulative foundations, 70% post-midterm topics.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="weekly">
+      <h2>Instructor teaching details by week</h2>
+      <p>These details are written for the instructor, not just students. Each week has a “demo → explanation → exam skill” structure.</p>
+
+      <details class="week-detail" open>
+        <summary>Week 1 — What deep learning is, and why demos come first</summary>
+        <div>
+          <p><strong>Teach:</strong> supervised learning loop, tensors, parameters, logits, loss surfaces, train/test split, why neural networks are function approximators, and why gradients turn one data point into many parameter updates.</p>
+          <p><strong>Demo:</strong> a two-class toy dataset and a tiny classifier. Use Claude Code to generate a minimal PyTorch script, then ask students to catch missing pieces: seed, train/test split, loss, optimizer, visualization.</p>
+          <p><strong>Notebook task:</strong> draw arrows for <span class="kbd">x → model(x) → loss → backward() → optimizer.step()</span>.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 2 — Gradient descent, MLPs, autograd, backprop</summary>
+        <div>
+          <p><strong>Teach:</strong> scalar derivative, vector gradient, chain rule, linear layer shape, activation functions, cross entropy, learning rate, minibatches, and why manual backprop becomes tedious.</p>
+          <p><strong>Demo:</strong> first implement a 1D regression update by hand, then switch to PyTorch autograd. Print gradients for each parameter. Show exploding/vanishing behavior with a bad learning rate or deep MLP.</p>
+          <p><strong>Exam skill:</strong> one-step SGD update and shape tracing through <span class="kbd">Linear → ReLU → Linear</span>.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 3 — Convolution, CNNs, ResNets</summary>
+        <div>
+          <p><strong>Teach:</strong> convolution as a sliding dot product, padding, stride, channels, kernels, pooling, receptive fields, parameter sharing, and residual connections as an optimization trick.</p>
+          <p><strong>Demo:</strong> Sobel/blur filters on images; then a small CNN. Let Claude Code add a residual block and shape assertions.</p>
+          <p><strong>Exam skill:</strong> compute output shape, explain fewer parameters than an MLP, and explain why <span class="kbd">y = x + F(x)</span> helps gradients.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 4 — Spurious correlation, robustness, adversarial examples</summary>
+        <div>
+          <p><strong>Teach:</strong> empirical risk vs true risk, distribution shift, shortcut learning, confounders, invariance, adversarial perturbations, high-dimensional geometry, and Gaussian donut intuition.</p>
+          <p><strong>Demo:</strong> train a classifier where color correlates with label; flip color at test time. Then apply a small gradient-sign perturbation.</p>
+          <p><strong>Exam skill:</strong> distinguish correlation from causation in model behavior; explain why small per-pixel noise can matter in high dimension.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 5 — Tokenization, embeddings, attention, RoPE, ViT</summary>
+        <div>
+          <p><strong>Teach:</strong> BPE merges, token IDs, embedding tables, Q/K/V projections, scaled dot-product attention, softmax, causal vs bidirectional masks, positional encoding, RoPE intuition, image patches in ViT.</p>
+          <p><strong>Demo:</strong> print BPE integer tokens for a sentence; display embedding lookup; compute one attention head with small matrices; visualize attention weights.</p>
+          <p><strong>Exam skill:</strong> label dimensions in <span class="kbd">QKᵀ / sqrt(d)</span> and explain why attention mixes token information.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 6 — NanoGPT and transformer systems</summary>
+        <div>
+          <p><strong>Teach:</strong> next-token prediction, causal mask, training vs generation, temperature, context length, prefill/decode, KV cache, grouped-query/multi-query attention, MoE routing, checkpointing, FlashAttention IO story.</p>
+          <p><strong>Demo:</strong> train a tiny Shakespeare-like model; print generated samples as training progresses; inspect one layer’s attention; compare cached vs uncached generation conceptually.</p>
+          <p><strong>Exam skill:</strong> explain why generation is sequential, why KV cache helps, and why attention is not only a FLOP problem but also a memory movement problem.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 7 — Midterm</summary>
+        <div>
+          <p><strong>Format:</strong> in-class paper exam. Suggested structure: definitions and calibrated blanks; tensor-shape tracing; one gradient calculation; CNN/ResNet explanation; BPE/attention mechanics; small code-reading question.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 8 — Contrastive and self-supervised representation learning</summary>
+        <div>
+          <p><strong>Teach:</strong> augmentation as supervision, invariance, instance discrimination, triplet loss, SimCLR, collapse/trivial solution, CLIP, SigLIP, distillation, generalized/on-policy distillation intuition.</p>
+          <p><strong>Demo:</strong> two views of same image; compute cosine similarity matrix; show how positives and negatives shape embeddings.</p>
+          <p><strong>Exam skill:</strong> explain how a model learns from labels it created from data structure rather than human labels.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 9 — ELBO, VAE, VQ-VAE, latent compression</summary>
+        <div>
+          <p><strong>Teach:</strong> latent variable model, encoder posterior approximation, decoder likelihood, KL divergence, ELBO as reconstruction term minus regularizer, reparameterization, discrete latents in VQ-VAE, why image/video generators often operate in latent spaces.</p>
+          <p><strong>Demo:</strong> MNIST VAE training and latent interpolation; compare reconstruction quality at different latent dimensions.</p>
+          <p><strong>Exam skill:</strong> state the ELBO and explain each term in words.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 10 — Diffusion, flows, DMD, MeanFlow</summary>
+        <div>
+          <p><strong>Teach:</strong> forward noising, denoising network, score intuition, sampling steps, classifier-free guidance, FID as distribution-level metric, normalizing flows, rectified flow, average velocity in MeanFlow, and distribution matching distillation.</p>
+          <p><strong>Demo:</strong> two-dimensional Gaussian donuts: corrupt with noise, learn denoising arrows, sample iteratively; then discuss how distillation compresses sampling steps.</p>
+          <p><strong>Exam skill:</strong> compare autoregressive likelihood, VAE ELBO, diffusion denoising, and flow matching objectives.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 11 — Video, forcing, unified multimodal generation</summary>
+        <div>
+          <p><strong>Teach:</strong> why video is harder than image generation: temporal coherence, compute, data redundancy, long-horizon consistency, action/physics ambiguity. Connect teacher forcing, exposure bias, diffusion forcing, self forcing, causal forcing, RAE, Transfusion, UniFluid, and Janus-like unified understanding/generation.</p>
+          <p><strong>Demo:</strong> a toy sequence predictor with compounding errors. Discuss how forcing choices change the train-test gap.</p>
+          <p><strong>Exam skill:</strong> explain why a model that looks good for 2 seconds may fail for 2 minutes.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 12 — Reinforcement learning, DPO, GRPO, post-training</summary>
+        <div>
+          <p><strong>Teach:</strong> state, action, reward, policy, value, exploration, RLHF pipeline, reward models, preference pairs, DPO as direct preference optimization, GRPO as group-relative policy optimization without a separate critic in its common LLM use.</p>
+          <p><strong>Demo:</strong> a small preference dataset: two answers, one preferred. Derive the intuition of making preferred outputs more likely while controlling drift.</p>
+          <p><strong>Exam skill:</strong> distinguish supervised fine-tuning, RLHF, DPO, and GRPO conceptually.</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 13 — Wednesday Nov 25 Friday-class meeting: world models and agentic AI</summary>
+        <div>
+          <p><strong>Teach:</strong> world model vs policy vs agent model, agentic workflow vs agentive autonomy, VLA vs WAM, Physical AI, embodied prediction/action loops, System A/B/M framing, limitations of current agents.</p>
+          <p><strong>Demo/debate:</strong> give students printed abstracts from “Critiques of World Models,” “Critique of Agent Model,” and “Why AI systems don’t learn…” Ask them to mark claims as definition, architecture, evidence, or speculation.</p>
+          <p><strong>Exam skill:</strong> write a clean distinction between “predict what happens,” “choose what to do,” and “learn how to improve while acting.”</p>
+        </div>
+      </details>
+
+      <details class="week-detail">
+        <summary>Week 14 — Interpretability and systems wrap</summary>
+        <div>
+          <p><strong>Teach:</strong> superposition, sparse autoencoders, transcoders as computation decomposers, crosscoders for cross-layer/model comparison, SelfIE and activation-to-language ideas, HBM vs SRAM, cache locality, LRU, KV cache strategies, ring attention, all-reduce/network delay, gradient checkpointing review.</p>
+          <p><strong>Demo:</strong> use a toy activation matrix and sparse dictionary to explain features; sketch how FlashAttention avoids materializing attention; draw a distributed attention ring.</p>
+          <p><strong>Exam skill:</strong> explain why interpretability and inference efficiency both depend on internal representations, not just final outputs.</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="exam-prep">
+      <h2>Exam preparation guide</h2>
+      <div class="grid two">
+        <div class="card soft">
+          <h3>Midterm scope</h3>
+          <p>Weeks 1–6. Students should bring paper notes that include: core definitions; SGD update formula; MLP and CNN diagrams; convolution shape examples; shortcut-learning example; BPE example; attention equation; causal mask diagram; NanoGPT training loop; KV cache explanation.</p>
+        </div>
+        <div class="card soft">
+          <h3>Final scope</h3>
+          <p>Cumulative, with emphasis on Weeks 8–14. Students should bring paper notes that include: contrastive loss diagrams; ELBO derivation; VAE diagram; diffusion/flow comparison; forcing methods; DPO/GRPO comparison; world model vs agent model distinction; interpretability tool definitions; HBM/SRAM and cache diagrams.</p>
+        </div>
+      </div>
+      <h3>Question types to use</h3>
+      <ul>
+        <li><strong>Shape tracing:</strong> Given batch size, sequence length, hidden size, and heads, compute Q/K/V and attention output shapes.</li>
+        <li><strong>One-step math:</strong> Compute one SGD update or one simple softmax attention output.</li>
+        <li><strong>Diagram explanation:</strong> Draw CNN, residual block, transformer block, VAE, diffusion chain, or KV cache.</li>
+        <li><strong>Code reading:</strong> Identify model, loss, optimizer, data loader, train/eval mode, or bug in a short PyTorch snippet.</li>
+        <li><strong>Concept contrast:</strong> CNN vs ViT; VAE vs diffusion; DPO vs RLHF; world model vs policy; SAE vs transcoder.</li>
+        <li><strong>Failure mode:</strong> Explain spurious correlation, adversarial vulnerability, exposure bias, model collapse, mode collapse, or cache/memory bottleneck.</li>
+      </ul>
+    </section>
+
+    <section id="policies">
+      <h2>Course policies</h2>
+      <h3>AI and electronics</h3>
+      <p>AI-assisted coding is part of the course during supervised class demos. It is used to accelerate exploration and make debugging visible. Students must still understand every line of code and every equation that appears on the exam.</p>
+      <p>During exams, electronics and AI access are prohibited. This includes devices that are powered off but accessible at the desk. Devices must be stored away. Approved accommodations are handled through Rutgers procedures.</p>
+
+      <h3>No homework</h3>
+      <p>No written homework is submitted or graded. Optional practice prompts, notebooks, and papers may be posted for exam preparation. The course relies on live attendance, notebook-taking, and exam readiness.</p>
+
+      <h3>Academic integrity</h3>
+      <p>Rutgers takes academic dishonesty seriously. Suspected violations, including unauthorized electronic or AI assistance during exams, will be reported through Rutgers academic integrity procedures. A useful exam pledge is: “On my honor, I have neither received nor given any unauthorized assistance on this examination.”</p>
+
+      <h3>Accessibility</h3>
+      <p>Rutgers welcomes students with disabilities into its educational programs. Students who need accommodations should contact the appropriate Rutgers disability services office, complete the ODS process, and request a Letter of Accommodation as early as possible. Accommodations are not retroactive.</p>
+
+      <h3>Religious observances and authenticated absences</h3>
+      <p>Students should notify the instructor as early as possible about conflicts due to religious observance or authenticated absence. Make-up arrangements for exams follow Rutgers policy and departmental procedures.</p>
+    </section>
+
+    <section id="references">
+      <h2>Reference courses, books, and papers</h2>
+      <p>The course is intentionally undergraduate-first, but it borrows organization and topic coverage from graduate/frontier courses and public books. Readings are recommended, not graded.</p>
+
+      <h3>Course models and books</h3>
+      <ul>
+        <li><a href="https://mit-6s978.github.io/" target="_blank" rel="noopener">MIT 6.S978 Deep Generative Models</a> — generative modeling breadth and frontier framing.</li>
+        <li><a href="https://deepgenerativemodels.github.io/" target="_blank" rel="noopener">Stanford CS236 Deep Generative Models</a> — probabilistic foundations: VAE, flows, diffusion, autoregressive models.</li>
+        <li><a href="https://princeton-cos597r.github.io/" target="_blank" rel="noopener">Princeton COS 597R Deep Dive into Large Language Models</a> — LLM architecture, data, scaling, post-training, research-discussion style.</li>
+        <li><a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank" rel="noopener">Berkeley Agentic AI</a> — agents, evaluation, deployment, multi-agent systems, safety/security.</li>
+        <li><a href="https://visionbook.mit.edu/" target="_blank" rel="noopener">MIT Foundations of Computer Vision</a> — undergraduate-friendly chapters on gradient learning, neural networks, CNNs, transformers, representation learning, and robustness.</li>
+      </ul>
+
+      <h3>Tooling and live coding</h3>
+      <ul>
+        <li><a href="https://anthropic.skilljar.com/claude-code-101" target="_blank" rel="noopener">Claude Code 101</a> — installation, agentic loop, context, tools, permissions, plan mode, code review, customization.</li>
+        <li><a href="https://www.anthropic.com/research/claude-code-expertise" target="_blank" rel="noopener">How Claude Code is used in practice</a> — empirical framing for interactive agentic coding.</li>
+        <li><a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener">nanoGPT</a> — compact GPT training code suitable for classroom simplification.</li>
+      </ul>
+
+      <h3>Selected technical readings</h3>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a></li>
+        <li><a href="https://tridao.me/blog/2024/flash3/" target="_blank" rel="noopener">FlashAttention-3 blog</a></li>
+        <li><a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">Direct Preference Optimization</a></li>
+        <li><a href="https://arxiv.org/abs/2402.03300" target="_blank" rel="noopener">DeepSeekMath / GRPO</a></li>
+        <li><a href="https://arxiv.org/abs/2306.13649" target="_blank" rel="noopener">On-Policy Distillation of Language Models / GKD</a></li>
+        <li><a href="https://arxiv.org/abs/2604.00626" target="_blank" rel="noopener">Survey of On-Policy Distillation for LLMs</a></li>
+        <li><a href="https://arxiv.org/abs/2311.18828" target="_blank" rel="noopener">Distribution Matching Distillation</a></li>
+        <li><a href="https://www.boyuan.space/diffusion-forcing/" target="_blank" rel="noopener">Diffusion Forcing</a></li>
+        <li><a href="https://arxiv.org/abs/2602.02214" target="_blank" rel="noopener">Causal Forcing</a></li>
+        <li><a href="https://arxiv.org/abs/2505.13447" target="_blank" rel="noopener">Mean Flows for One-step Generative Modeling</a></li>
+        <li><a href="https://arxiv.org/abs/2510.11690" target="_blank" rel="noopener">Diffusion Transformers with Representation Autoencoders</a></li>
+        <li><a href="https://arxiv.org/html/2408.11039v1" target="_blank" rel="noopener">Transfusion: Predict the Next Token and Diffuse Images</a></li>
+        <li><a href="https://arxiv.org/abs/2503.13436" target="_blank" rel="noopener">UniFluid</a></li>
+        <li><a href="https://arxiv.org/abs/2605.12090" target="_blank" rel="noopener">World Action Models</a></li>
+        <li><a href="https://arxiv.org/abs/2507.05169" target="_blank" rel="noopener">Critiques of World Models</a></li>
+        <li><a href="https://arxiv.org/abs/2606.23991" target="_blank" rel="noopener">Critique of Agent Model</a></li>
+        <li><a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener">Why AI systems don’t learn and what to do about it</a></li>
+        <li><a href="https://arxiv.org/abs/2309.08600" target="_blank" rel="noopener">Sparse Autoencoders Find Highly Interpretable Features in Language Models</a></li>
+        <li><a href="https://arxiv.org/abs/2406.11944" target="_blank" rel="noopener">Transcoders Find Interpretable LLM Feature Circuits</a></li>
+        <li><a href="https://transformer-circuits.pub/2024/crosscoders/index.html" target="_blank" rel="noopener">Sparse Crosscoders for Cross-Layer Features and Model Diffing</a></li>
+      </ul>
+
+      <h3>Rutgers sources to verify before publishing</h3>
+      <ul>
+        <li><a href="https://scheduling.rutgers.edu/academic-calendar/" target="_blank" rel="noopener">Rutgers University Academic Calendar</a></li>
+        <li><a href="https://scheduling.rutgers.edu/exam-scheduling/final-exams/" target="_blank" rel="noopener">Rutgers New Brunswick Final Exam Policies</a></li>
+        <li><a href="https://scheduling.rutgers.edu/wp-content/uploads/2026/06/Fall-2026-New-Brunswick-Final-Exam-Grid.pdf" target="_blank" rel="noopener">Fall 2026 New Brunswick Final Exam Grid</a></li>
+        <li><a href="https://scheduling.rutgers.edu/course-scheduling/standard-course-periods/" target="_blank" rel="noopener">Rutgers Standard Course Periods</a></li>
+        <li><a href="https://nbacademicintegrity.rutgers.edu/node/27" target="_blank" rel="noopener">Rutgers Academic Integrity Syllabus Statement</a></li>
+        <li><a href="https://ods.rutgers.edu/faculty-staff/syllabus-statement" target="_blank" rel="noopener">Rutgers Office of Disability Services Syllabus Statement</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Draft prepared for Fall 2026 Rutgers planning. Last updated: July 3, 2026. Replace bracketed placeholders with official course number, instructor information, room, office hours, and department-approved final exam details before publishing.</p>
+    </footer>
+  </div>
+</body>
+</html>
