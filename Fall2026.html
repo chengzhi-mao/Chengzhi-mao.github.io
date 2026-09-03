@@ -1,627 +1,808 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rutgers Fall 2026 syllabus for DEEP LEARNING 01:198:462:02.">
+  <meta name="theme-color" content="#cc0033">
   <title>DEEP LEARNING 01:198:462:02 — Rutgers Fall 2026 Syllabus</title>
   <style>
     :root {
       --rutgers-red: #cc0033;
-      --ink: #1d1d1f;
-      --muted: #5f6673;
-      --line: #d7dbe3;
-      --soft: #f6f7f9;
-      --soft-red: #fff2f5;
-      --soft-blue: #eef5ff;
-      --accent: #243b53;
-      --ok: #176f3d;
-      --warn: #8a4b00;
+      --rutgers-red-dark: #990026;
+      --ink: #20242c;
+      --muted: #5d6573;
+      --line: #d9dde4;
+      --paper: #ffffff;
+      --soft: #f5f7fa;
+      --warm: #fbf7f3;
+      --red-soft: #fff1f4;
+      --blue-soft: #eef5ff;
+      --green-soft: #eef9f3;
+      --shadow: 0 14px 38px rgba(26, 32, 44, 0.08);
+      --radius: 18px;
     }
+
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.55;
-      background: #fff;
+      background:
+        linear-gradient(180deg, #f7f4f2 0, #fff 360px),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
     }
-    a { color: var(--rutgers-red); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .page { max-width: 1180px; margin: 0 auto; padding: 28px 24px 64px; }
-    header.hero {
-      border: 1px solid var(--line);
-      border-top: 8px solid var(--rutgers-red);
-      border-radius: 18px;
-      padding: 32px;
-      background: linear-gradient(180deg, #fff, #fbfbfd);
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+
+    a {
+      color: var(--rutgers-red-dark);
+      font-weight: 650;
+      text-underline-offset: 0.18em;
     }
-    .eyebrow { color: var(--rutgers-red); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; }
-    h1 { margin: 8px 0 12px; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.05; }
-    h2 { margin: 36px 0 14px; font-size: 1.65rem; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
-    h3 { margin: 24px 0 10px; font-size: 1.22rem; }
-    h4 { margin: 14px 0 8px; font-size: 1.05rem; }
-    .subtitle { color: var(--muted); font-size: 1.15rem; max-width: 900px; }
-    .grid { display: grid; gap: 18px; }
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
-      background: #fff;
+
+    a:hover { color: var(--rutgers-red); }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(204, 0, 51, 0.3);
+      outline-offset: 3px;
+      border-radius: 4px;
     }
-    .card.soft { background: var(--soft); }
-    .card.red { background: var(--soft-red); border-color: #f0b8c4; }
-    .card.blue { background: var(--soft-blue); border-color: #bed7ff; }
-    .card h3:first-child, .card h4:first-child { margin-top: 0; }
-    .meta {
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .course-header {
+      position: relative;
+      overflow: hidden;
+      margin-top: 24px;
+      padding: clamp(28px, 5vw, 56px);
+      color: #fff;
+      background:
+        radial-gradient(circle at 86% 4%, rgba(255, 255, 255, 0.16), transparent 31%),
+        linear-gradient(135deg, #8f001f 0%, var(--rutgers-red) 58%, #e63259 100%);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.65rem, 7vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .course-code {
+      margin: 18px 0 0;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 700;
+    }
+
+    .hero-summary {
+      max-width: 800px;
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.05rem;
+    }
+
+    .facts {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 8px 16px;
-      margin-top: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
     }
-    .meta dt { font-weight: 800; color: var(--accent); }
-    .meta dd { margin: 0; }
-    nav.toc {
-      margin: 24px 0 4px;
-      padding: 16px 18px;
+
+    .fact {
+      min-height: 86px;
+      padding: 14px 15px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 14px;
-      background: var(--soft);
-      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
     }
-    nav.toc a { margin-right: 18px; white-space: nowrap; font-weight: 700; }
-    table { border-collapse: collapse; width: 100%; margin: 14px 0 24px; }
-    th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
-    th { background: #f1f3f6; text-align: left; color: var(--accent); }
-    tr.exam { background: #fff7e8; }
-    tr.makeup { background: #f8fbff; }
-    tr.review { background: #f6fff8; }
-    .pill {
-      display: inline-block;
+
+    .fact dt {
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .fact dd {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .fact a { color: #fff; }
+
+    .page-nav {
+      display: flex;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 8px;
+      overflow-x: auto;
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 3px 9px;
-      font-size: .78rem;
-      font-weight: 800;
-      color: var(--accent);
-      background: #fff;
-      margin: 0 5px 5px 0;
-      white-space: nowrap;
+      box-shadow: 0 8px 26px rgba(26, 32, 44, 0.05);
     }
-    .pill.core { border-color: #bdd7c4; background: #f2fff5; color: var(--ok); }
-    .pill.frontier { border-color: #ffdca8; background: #fff8ed; color: var(--warn); }
-    .pill.exam { border-color: #f0b8c4; background: var(--soft-red); color: var(--rutgers-red); }
-    ul, ol { padding-left: 1.3rem; }
-    li { margin: .35rem 0; }
-    .note { color: var(--muted); font-size: .96rem; }
-    .warning {
-      border: 2px solid var(--rutgers-red);
-      background: var(--soft-red);
-      padding: 16px 18px;
-      border-radius: 14px;
-      margin: 14px 0 22px;
+
+    .page-nav a {
+      flex: 1 0 auto;
+      padding: 8px 13px;
+      color: #444b57;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 760;
+      text-align: center;
+      text-decoration: none;
     }
-    .warning strong { color: var(--rutgers-red); }
-    .small { font-size: .9rem; }
-    .kbd {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      background: #f0f0f0;
-      padding: 2px 5px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
+
+    .page-nav a:hover { background: var(--red-soft); color: var(--rutgers-red-dark); }
+
+    main { padding: 18px 0 56px; }
+
+    section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 18px;
     }
-    .week-detail {
-      margin: 18px 0;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
+
+    section:last-of-type { border-bottom: 0; }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 24px;
     }
-    .week-detail summary {
-      cursor: pointer;
-      padding: 14px 16px;
-      font-weight: 850;
-      background: #f7f8fa;
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
     }
-    .week-detail div { padding: 4px 18px 18px; }
-    footer {
-      margin-top: 42px;
-      border-top: 2px solid var(--line);
-      padding-top: 20px;
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.3;
+    }
+
+    p { margin: 0 0 1em; }
+
+    .lede {
+      margin: 0;
       color: var(--muted);
-      font-size: .92rem;
+      font-size: 1.07rem;
     }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-    pre { background: #101418; color: #f5f7fa; padding: 16px; border-radius: 12px; overflow-x: auto; }
-    @media (max-width: 840px) {
-      .grid.two, .grid.three { grid-template-columns: 1fr; }
-      .meta { grid-template-columns: 1fr; }
-      table { font-size: .9rem; }
-      th, td { padding: 8px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
+
+    .card {
+      padding: 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .step {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 20px;
+      color: #fff;
+      background: var(--rutgers-red);
+      border-radius: 50%;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 8px 1fr;
+      gap: 18px;
+      margin-top: 16px;
+      padding: 20px;
+      background: var(--blue-soft);
+      border: 1px solid #c8dcf7;
+      border-radius: var(--radius);
+    }
+
+    .callout::before {
+      content: "";
+      display: block;
+      background: #2869b8;
+      border-radius: 999px;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    .requirements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .plain-list {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .plain-list li { margin: 0.38rem 0; }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 28px;
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .outcomes li { padding-left: 0.25rem; }
+
+    .grade-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .grade-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 205px;
+      padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .grade-card::after {
+      content: attr(data-points);
+      position: absolute;
+      right: 16px;
+      bottom: -18px;
+      color: rgba(204, 0, 51, 0.07);
+      font-size: 6.6rem;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.08em;
+    }
+
+    .points {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      color: var(--rutgers-red-dark);
+      background: var(--red-soft);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .grade-card p,
+    .grade-card ul { position: relative; z-index: 1; }
+
+    .no-midterm {
+      margin: 0 0 16px;
+      color: var(--rutgers-red-dark);
+      font-weight: 800;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+    }
+
+    caption {
+      padding: 15px 16px;
+      color: var(--muted);
+      background: var(--soft);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: #3e4652;
+      background: var(--soft);
+      font-size: 0.77rem;
+      font-weight: 850;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:last-child td,
+    tfoot tr:last-child td { border-bottom: 0; }
+
+    tfoot td {
+      background: var(--red-soft);
+      font-weight: 850;
+    }
+
+    .rubric { margin-top: 16px; }
+    .rubric th:nth-child(2),
+    .rubric td:nth-child(2) { width: 92px; text-align: center; }
+
+    .schedule th:nth-child(1),
+    .schedule td:nth-child(1) { width: 68px; text-align: center; }
+    .schedule th:nth-child(2),
+    .schedule td:nth-child(2) { width: 116px; white-space: nowrap; }
+    .schedule th:nth-child(3),
+    .schedule td:nth-child(3) { width: 31%; }
+
+    .week-label {
+      display: inline-grid;
+      place-items: center;
+      min-width: 34px;
+      height: 30px;
+      color: #3b4350;
+      background: #edf0f4;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .schedule strong { display: block; margin-bottom: 2px; }
+    .schedule .presentation td { background: var(--warm); }
+    .schedule .review td { background: var(--green-soft); }
+    .schedule .exam-row td { background: var(--red-soft); }
+    .schedule .exam-row .week-label { color: #fff; background: var(--rutgers-red); }
+
+    .tag {
+      display: inline-block;
+      margin: 2px 4px 0 0;
+      padding: 3px 8px;
+      color: #525a68;
+      background: #eef0f3;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      font-weight: 760;
+      line-height: 1.35;
+    }
+
+    .calendar-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      color: #5b3a06;
+      background: #fff8e8;
+      border-left: 5px solid #d99116;
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .policy-grid .card { background: var(--soft); }
+
+    footer {
+      margin-bottom: 30px;
+      padding: 22px 0 30px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-heading { grid-template-columns: 1fr; gap: 10px; }
+      .cards,
+      .policy-grid { grid-template-columns: 1fr; }
+      .requirements,
+      .grade-grid,
+      .outcomes { grid-template-columns: 1fr; }
+      .schedule th:nth-child(4),
+      .schedule td:nth-child(4) { min-width: 265px; }
+    }
+
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 24px, 1120px); }
+      .course-header { margin-top: 12px; border-radius: 20px; }
+      .facts { grid-template-columns: 1fr; }
+      .fact { min-height: 0; }
+      .page-nav { border-radius: 14px; }
+      .grade-card { min-height: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
     @media print {
-      body { font-size: 11pt; }
-      .page { max-width: none; padding: 0; }
-      header.hero, .card, .warning, nav.toc, .week-detail { box-shadow: none; break-inside: avoid; }
-      nav.toc { display: none; }
-      a { color: #000; text-decoration: underline; }
-      .week-detail { display: block; }
-      .week-detail summary { list-style: none; }
+      @page { margin: 0.55in; }
+      body { background: #fff; color: #000; font-size: 10.5pt; }
+      .shell { width: 100%; }
+      .course-header {
+        margin: 0;
+        padding: 24px;
+        color: #000;
+        background: #fff;
+        border: 2px solid #000;
+        box-shadow: none;
+      }
+      .hero-summary,
+      .fact dt { color: #333; }
+      .fact { border-color: #888; }
+      .fact a { color: #000; }
+      .page-nav { display: none; }
+      section { padding: 22px 0; }
+      .card,
+      .grade-card,
+      .table-wrap,
+      .callout { break-inside: avoid; box-shadow: none; }
+      a { color: #000; }
+      .grade-card::after { display: none; }
+      .schedule { font-size: 8.6pt; }
+      th, td { padding: 7px 8px; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="eyebrow">Rutgers University · Fall 2026 · Draft syllabus</div>
-      <h1>DEEP LEARNING: Demo-First Foundations to Frontier AI</h1>
-      <p class="subtitle">
-        A Friday 12:10–3:10 p.m. face-to-face undergraduate course for students with little or no deep learning background. The course starts each topic with a working demo and live Claude Code / PyTorch interaction, then reverse-engineers the math, systems, and modeling ideas behind the demo.
+  <div class="shell">
+    <header class="course-header">
+      <p class="kicker">Rutgers University · Fall 2026</p>
+      <h1>Deep Learning</h1>
+      <p class="course-code">01:198:462:02 · Foundations, models, and AI-assisted implementation</p>
+      <p class="hero-summary">
+        A rigorous, demo-first introduction to deep learning. We begin with working models, unpack the mathematics and design choices behind them, and build toward an individual final project.
       </p>
-      <dl class="meta">
-        <dt>Course title</dt><dd>DEEP LEARNING</dd>
-        <dt>Course number</dt><dd>01:198:462</dd>
-        <dt>Section</dt><dd>02</dd>
-        <dt>Enrollment</dt><dd>50 students; max enrollment 55; registration stop point 50.</dd>
-        <dt>Meeting time</dt><dd>Fridays, 12:10–3:10 p.m.</dd>
-        <dt>Instruction mode</dt><dd>Face-to-face.</dd>
-        <dt>Location</dt><dd>Lucy Stone Hall (LSH-A143), Livingston Campus.</dd>
-        <dt>Meeting pattern</dt><dd>Friday 12:10–3:10 p.m. class meetings, plus the Rutgers-designated Friday-class meeting on Wednesday, November 25, 2026. This draft uses an instructor-preferred <strong>in-class final exam</strong> during the final regular Friday meeting on Friday, December 4, 2026; confirm department/dean approval before publishing because Rutgers normally schedules cumulative finals during the official final exam period.</dd>
-        <dt>Instructor</dt><dd>Chengzhi Mao, cm1838@cs.rutgers.edu, [office], [office hours]</dd>
-        <dt>Prerequisites</dt><dd>This is a rigorous, mathematically demanding course, not a general AI survey. Students are expected to be comfortable with linear algebra, including vectors, matrices, dot products, norms, and basic matrix operations; calculus, including derivatives, chain rule, and gradients; probability/statistics basics; and Python programming. No prior deep learning course is assumed, but students who cannot read and debug Python or follow algebraic derivations under time pressure should expect a steep learning curve.</dd>
-        <dt>Required materials</dt><dd>Paper notebook and pen for every class. On exam days, paper notes/books/printouts are allowed; electronics are not.</dd>
+
+      <dl class="facts">
+        <div class="fact">
+          <dt>Meeting</dt>
+          <dd>Fridays<br>12:10–3:10 p.m.</dd>
+        </div>
+        <div class="fact">
+          <dt>Location</dt>
+          <dd>LSH-A143<br>Livingston Campus</dd>
+        </div>
+        <div class="fact">
+          <dt>Instructor</dt>
+          <dd>Chengzhi Mao<br><a href="mailto:cm1838@cs.rutgers.edu">cm1838@cs.rutgers.edu</a></dd>
+        </div>
+        <div class="fact">
+          <dt>Assessment</dt>
+          <dd>Project 50 points<br>Final exam 50 points</dd>
+        </div>
       </dl>
     </header>
 
-    <nav class="toc" aria-label="Table of contents">
-      <a href="#design">Design</a>
-      <a href="#outcomes">Learning outcomes</a>
+    <nav class="page-nav" aria-label="Syllabus sections">
+      <a href="#approach">Approach</a>
+      <a href="#outcomes">Outcomes</a>
       <a href="#grading">Grading</a>
-      <a href="#calendar">Calendar</a>
-      <a href="#weekly">Weekly details</a>
-      <a href="#exam-prep">Exam preparation</a>
+      <a href="#schedule">Schedule</a>
       <a href="#policies">Policies</a>
-      <a href="#references">References</a>
     </nav>
 
-    <section id="design">
-      <h2>Course design</h2>
-      <div class="grid three">
-        <div class="card blue">
-          <h3>Demo first</h3>
-          <p>Every technical unit begins with a visible artifact: a classifier learning, an attention map, BPE token IDs, a tiny GPT generating text, MNIST reconstructions, a diffusion denoising path, or a toy adversarial attack.</p>
+    <main>
+      <section id="approach">
+        <div class="section-heading">
+          <h2>How the course works</h2>
+          <p class="lede">
+            Class time is for seeing models work, asking why they work, and practicing the reasoning needed to build and debug them.
+          </p>
         </div>
-        <div class="card blue">
-          <h3>Then details</h3>
-          <p>After the demo works, the class unpacks the details: shapes, gradients, loss functions, optimization, data assumptions, inductive bias, compute/memory bottlenecks, and failure modes.</p>
+
+        <div class="cards">
+          <article class="card">
+            <span class="step" aria-hidden="true">1</span>
+            <h3>See the demo</h3>
+            <p>Each unit starts with a compact working example in PyTorch: data, model, loss, training loop, and observable behavior.</p>
+          </article>
+          <article class="card">
+            <span class="step" aria-hidden="true">2</span>
+            <h3>Unpack the ideas</h3>
+            <p>We then trace tensor shapes, objectives, gradients, architectural choices, and failure modes using equations and diagrams.</p>
+          </article>
+          <article class="card">
+            <span class="step" aria-hidden="true">3</span>
+            <h3>Build and explain</h3>
+            <p>Students extend the demo, use outside resources to fill gaps, and learn to explain what the code is doing—not merely run it.</p>
+          </article>
         </div>
-        <div class="card blue">
-          <h3>Paper notebook culture</h3>
-          <p>Slides are not the main artifact. Students build a paper reference manual in class. Missing class means learning from another student’s notes.</p>
+
+        <div class="callout">
+          <div>
+            <h3>AI coding is part of the course</h3>
+            <p>
+              Students are expected to learn an AI coding workflow using tools such as Claude Code or Codex. These tools may help scaffold, test, and debug project code, but students must verify the output and be able to explain every submitted component. No paid AI account is required.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <h3>How Claude Code is used</h3>
-      <p>Claude Code is used as an instructor-operated live coding partner, not as a replacement for understanding. Typical prompts will ask it to scaffold a PyTorch file, add printouts for tensor shapes, generate small tests, convert equations into code, debug an error, or refactor a notebook into a readable script. Students are expected to critique the output: What is correct? What is hidden? What is inefficient? What would fail on a real dataset?</p>
-      <p class="note">No student needs a paid AI account for graded work. All graded assessment is paper-based.</p>
-    </section>
+        <div class="requirements">
+          <article class="card">
+            <h3>Prerequisites</h3>
+            <ul class="plain-list">
+              <li>Calculus: derivatives, chain rule, and gradients, including matrix inputs</li>
+              <li>Linear algebra: vectors, matrices, norms, and the basic idea of SVD</li>
+              <li>Probability: conditional probability and Bayes' rule</li>
+              <li>Python: reading, writing, and debugging small programs</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>What to bring</h3>
+            <ul class="plain-list">
+              <li>A laptop for regular class demos and coding activities</li>
+              <li>A paper notebook for derivations, diagrams, and review</li>
+              <li>Curiosity and a willingness to inspect model failures</li>
+            </ul>
+            <p>No previous deep learning course is assumed.</p>
+          </article>
+        </div>
+      </section>
 
-    <section id="outcomes">
-      <h2>Learning outcomes</h2>
-      <p>By the end of the course, students should be able to:</p>
-      <ol>
-        <li>Trace the data path through tensors, embeddings, MLPs, CNNs, residual blocks, attention heads, ViTs, VAEs, diffusion models, and small transformer LMs.</li>
-        <li>Explain gradient descent, backpropagation, loss functions, overfitting, generalization, robustness, and spurious correlation using equations and diagrams.</li>
-        <li>Read small PyTorch programs and identify what the model, loss, optimizer, and training loop are doing.</li>
-        <li>Derive and interpret the VAE ELBO at a high level, and compare likelihood, reconstruction, contrastive, preference, RL, and distribution-matching objectives.</li>
-        <li>Explain transformer mechanics: BPE tokenization, embeddings, Q/K/V attention, positional encodings including RoPE, KV cache, grouped-query / multi-query attention, and why FlashAttention reduces IO.</li>
-        <li>Compare major generative model families: autoregressive models, VAEs, VQ-VAEs, normalizing flows, rectified/mean flows, diffusion, diffusion distillation, and video generation forcing methods.</li>
-        <li>Give a technically grounded one-paragraph explanation of frontier ideas: MoE, CLIP/SigLIP, RAE, Transfusion, UniFluid, VLA/WAM, world models, agent models, SAE/transcoders/crosscoders, and inference systems.</li>
-      </ol>
-    </section>
+      <section id="outcomes">
+        <div class="section-heading">
+          <h2>Learning outcomes</h2>
+          <p class="lede">By the end of the course, students should be able to:</p>
+        </div>
+        <ol class="outcomes">
+          <li>Translate a learning problem into data, parameters, a model, a loss, and an evaluation plan.</li>
+          <li>Trace forward and backward computation through linear models, MLPs, CNNs, RNNs, and transformers.</li>
+          <li>Read and debug a compact PyTorch training pipeline, including tensor shapes and optimization behavior.</li>
+          <li>Explain self-attention, causal language modeling, and the core structure of a GPT-style model.</li>
+          <li>Compare VAE and GAN objectives, strengths, failure modes, and appropriate uses.</li>
+          <li>Design, implement, evaluate, and clearly present an individual deep learning project.</li>
+        </ol>
+      </section>
 
-    <section id="grading">
-      <h2>Grading and assessment</h2>
-      <div class="grid two">
-        <div class="card red">
-          <h3>Course grade</h3>
+      <section id="grading">
+        <div class="section-heading">
+          <h2>Grading</h2>
+          <p class="lede">The course grade is based on two assessments totaling 100 points.</p>
+        </div>
+
+        <p class="no-midterm">There is no midterm exam.</p>
+
+        <div class="grade-grid">
+          <article class="grade-card" data-points="50">
+            <span class="points">50 points</span>
+            <h3>Individual project</h3>
+            <p>Build a deep learning system or experiment with a visible demo, evidence-based evaluation, and a concise explanation of what was learned.</p>
+            <p><strong>Presentations:</strong> Weeks 11 and 12. Your final artifact is due before your assigned presentation.</p>
+          </article>
+          <article class="grade-card" data-points="50">
+            <span class="points">50 points</span>
+            <h3>Final exam</h3>
+            <p>A cumulative, handwritten exam on the last class meeting: <strong>Friday, December 4, 2026, 12:10–3:10 p.m.</strong></p>
+            <p><strong>Closed book and no electronics.</strong> Expect conceptual questions, calculations, tensor shapes, diagrams, and pseudocode.</p>
+          </article>
+        </div>
+
+        <div class="table-wrap rubric">
           <table>
-            <thead><tr><th>Assessment</th><th>Weight</th><th>Format</th></tr></thead>
+            <caption>Project rubric. AI-generated rubric feedback may be used as an advisory check; the instructor assigns the final score.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Criterion</th>
+                <th scope="col">Points</th>
+                <th scope="col">Evidence expected</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>Midterm exam</td><td>50%</td><td>In class, paper, open paper materials, no electronics.</td></tr>
-              <tr><td>Final exam</td><td>50%</td><td>In class during the final regular meeting, paper, open paper materials, no electronics. This requires department/dean confirmation before publication.</td></tr>
-              <tr><td>Optional bonus project</td><td>+0–10 pts</td><td>Extra credit only. GPT/Claude may be used as an advisory grading assistant under the rubric below; the instructor assigns the final score.</td></tr>
-              <tr><td>Attendance bonus</td><td>0 or +5 pts</td><td>Extra credit only. Five random in-class attendance checks will be administered; students present for all five receive +5 points. No partial attendance bonus.</td></tr>
-              <tr><td>Homework</td><td>0%</td><td>No required written homework is collected or graded.</td></tr>
-              <tr><td>In-class tasks</td><td>0%</td><td>Used for attendance and practice, not as a grade component.</td></tr>
+              <tr>
+                <td>Technical depth</td>
+                <td>15</td>
+                <td>Appropriate deep learning or generative AI methods, implemented and explained correctly.</td>
+              </tr>
+              <tr>
+                <td>Evaluation and reproducibility</td>
+                <td>10</td>
+                <td>Clear setup, sensible metrics or comparisons, runnable code, and honest limitations.</td>
+              </tr>
+              <tr>
+                <td>Novelty and demonstration</td>
+                <td>10</td>
+                <td>An interesting question, extension, failure analysis, or visualization beyond copying a tutorial.</td>
+              </tr>
+              <tr>
+                <td>Presentation and understanding</td>
+                <td>15</td>
+                <td>A focused live explanation and convincing answers to questions about design and code.</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>50</td>
+                <td>Individual work; material AI assistance must be disclosed.</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div class="section-heading">
+          <h2>Week-by-week plan</h2>
+          <p class="lede">
+            The sequence moves from machine learning basics through discriminative, sequential, attention-based, and generative models. Topics may be adjusted slightly to match class progress.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="schedule">
+            <thead>
+              <tr>
+                <th scope="col">Week</th>
+                <th scope="col">Date</th>
+                <th scope="col">Focus</th>
+                <th scope="col">Demo and in-class practice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="week-label">01</span></td>
+                <td>Fri Sep 4</td>
+                <td><strong>Machine learning basics</strong><span class="tag">data</span><span class="tag">loss</span><span class="tag">generalization</span></td>
+                <td>Train a first classifier; identify inputs, parameters, objective, train/validation/test splits, and sources of error.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">02</span></td>
+                <td>Fri Sep 11</td>
+                <td><strong>Linear neural networks</strong><span class="tag">linear regression</span><span class="tag">softmax</span></td>
+                <td>Implement vectorized linear and softmax models; connect logits, cross-entropy, and one gradient step.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">03</span></td>
+                <td>Fri Sep 18</td>
+                <td><strong>Multilayer perceptrons</strong><span class="tag">activations</span><span class="tag">backprop</span></td>
+                <td>Turn a linear model into an MLP; trace shapes and gradients; examine underfitting and overfitting.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">04</span></td>
+                <td>Fri Sep 25</td>
+                <td><strong>Convolutional neural networks</strong><span class="tag">kernels</span><span class="tag">receptive fields</span></td>
+                <td>Build an image classifier and visualize learned filters, feature maps, padding, stride, and pooling.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">05</span></td>
+                <td>Fri Oct 2</td>
+                <td><strong>Modern CNNs</strong><span class="tag">residual blocks</span><span class="tag">normalization</span></td>
+                <td>Compare plain and residual networks; use transfer learning and diagnose training behavior.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">06</span></td>
+                <td>Fri Oct 9</td>
+                <td><strong>Recurrent neural networks</strong><span class="tag">sequence modeling</span><span class="tag">LSTM / GRU</span></td>
+                <td>Train a small sequence model; unroll it through time and inspect vanishing or exploding gradients.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">07</span></td>
+                <td>Fri Oct 16</td>
+                <td><strong>Attention and transformers</strong><span class="tag">Q / K / V</span><span class="tag">self-attention</span></td>
+                <td>Compute attention by hand and in code; assemble a transformer block with positional information.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">08</span></td>
+                <td>Fri Oct 23</td>
+                <td><strong>Language models and GPT</strong><span class="tag">tokenization</span><span class="tag">causal masking</span></td>
+                <td>Train a tiny next-token model; inspect tokens, causal attention, generation, and decoding choices.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">09</span></td>
+                <td>Fri Oct 30</td>
+                <td><strong>Optimization</strong><span class="tag">SGD</span><span class="tag">momentum</span><span class="tag">Adam</span></td>
+                <td>Compare optimizers and learning-rate schedules; read loss curves and debug unstable training.</td>
+              </tr>
+              <tr>
+                <td><span class="week-label">10</span></td>
+                <td>Fri Nov 6</td>
+                <td><strong>VAE and GAN</strong><span class="tag">latent variables</span><span class="tag">adversarial learning</span></td>
+                <td>Compare reconstructions and samples; trace reparameterization, the ELBO, GAN objectives, and training failure modes.</td>
+              </tr>
+              <tr class="presentation">
+                <td><span class="week-label">11</span></td>
+                <td>Fri Nov 13</td>
+                <td><strong>Project presentations I</strong><span class="tag">individual project</span></td>
+                <td>Live demos, technical explanations, questions, and rubric-based feedback.</td>
+              </tr>
+              <tr class="presentation">
+                <td><span class="week-label">12</span></td>
+                <td>Fri Nov 20</td>
+                <td><strong>Project presentations II</strong><span class="tag">individual project</span></td>
+                <td>Live demos, technical explanations, questions, and rubric-based feedback.</td>
+              </tr>
+              <tr class="review">
+                <td><span class="week-label">13</span></td>
+                <td>Wed Nov 25</td>
+                <td><strong>Final exam review and go-through</strong><span class="tag">Friday classes meet Wednesday</span></td>
+                <td>Connect the full course sequence; work through representative calculations, diagrams, and pseudocode questions.</td>
+              </tr>
+              <tr class="exam-row">
+                <td><span class="week-label">14</span></td>
+                <td>Fri Dec 4</td>
+                <td><strong>Final exam</strong><span class="tag">50 points</span><span class="tag">handwritten</span></td>
+                <td>Cumulative in-class exam. Closed book; no phones, laptops, tablets, smartwatches, AI tools, or other electronics.</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div class="card red">
-          <h3>Exam scoring rule</h3>
-          <p>Unless a question explicitly states a different rubric:</p>
-          <ul>
-            <li><strong>Correct answer:</strong> 100% of the item.</li>
-            <li><strong>Blank / empty answer:</strong> 20% of the item.</li>
-            <li><strong>Wrong answer:</strong> 0% of the item.</li>
-          </ul>
-          <p>This rewards calibrated uncertainty. Students should not bluff. Leave a part blank if you cannot support the answer.</p>
+
+        <p class="calendar-note">
+          The <a href="https://scheduling.rutgers.edu/academic-calendar/">Rutgers Fall 2026 calendar</a> designates Wednesday, November 25 as a Friday-class day. The December 4 in-class final is the planned last meeting; because Rutgers ordinarily schedules final exams during the official exam period, this timing is subject to the required department/dean approval. If the plan is not approved, the official Rutgers exam schedule will control.
+        </p>
+      </section>
+
+      <section id="policies">
+        <div class="section-heading">
+          <h2>Essential policies</h2>
+          <p class="lede">The shortest version: use tools honestly, own your work, and ask for help early.</p>
         </div>
-      </div>
 
-      <div class="warning">
-        <strong>Exam materials policy.</strong> Students may bring any amount of paper content: handwritten notes, printed code, printed papers, books, diagrams, and formula sheets. Students may not use phones, laptops, tablets, smartwatches, earbuds, calculators, electronic dictionaries, cameras, messaging tools, cloud notes, AI models, or any other electronic device during exams, except where a Rutgers-approved accommodation requires a specific arrangement. Unauthorized electronics or AI use during an exam will be handled as an academic integrity violation under Rutgers procedures.
-      </div>
-
-      <h3>Optional 10-point bonus project</h3>
-      <p>Students may complete one optional mini-project for up to <strong>10 bonus points</strong> added after the midterm/final weighted average. The project should extend a live class demo, reproduce a small paper idea, build a clearer visualization, or critique a model failure mode. It is intended as enrichment, not a required workload.</p>
-      <table>
-        <thead><tr><th>Criterion</th><th>Points</th><th>What earns credit</th></tr></thead>
-        <tbody>
-          <tr><td>Novelty / ambition</td><td>0–4</td><td>A creative extension beyond copying a notebook: new data, new ablation, new visualization, new failure case, or a thoughtful paper-to-demo translation.</td></tr>
-          <tr><td>Technical solidity</td><td>0–4</td><td>The idea runs, the code or derivation is coherent, claims are supported by evidence, and limitations are stated honestly.</td></tr>
-          <tr><td>Clarity / reproducibility</td><td>0–2</td><td>The submission is easy to inspect: short README, clear figures, minimal commands, and a concise explanation of what was learned.</td></tr>
-        </tbody>
-      </table>
-      <p><strong>AI-assisted bonus grading:</strong> GPT/Claude may be used to produce an initial rubric-based critique of de-identified project materials, especially for novelty and technical solidity. The model score is advisory; the instructor or teaching staff make the final decision, may override model output, and will not upload unnecessary student identifiers or private student records to public AI tools. Students may request human review of the bonus score.</p>
-      <p><strong>Maximum extra credit:</strong> Students may earn up to <strong>+15 points</strong> total: up to +10 from the optional project and +5 from the attendance bonus.</p>
-
-      <h3>Attendance</h3>
-      <p>Attendance is recorded through short in-class tasks. These tasks are meant to make students actively process the material: draw the computation graph, compute one gradient step, write BPE merges, label Q/K/V tensor shapes, explain one failure mode, or annotate a printed code snippet. Tasks are not homework and are not a regular grade component.</p>
-      <p><strong>Attendance bonus:</strong> The instructor will take attendance during <strong>five random class meetings</strong>. Students who are present for all five random attendance checks receive <strong>+5 bonus points</strong> added after the midterm/final average and any project bonus. Missing one or more random checks earns no attendance bonus, but it is not a grade penalty. Rutgers-approved absences and accommodations will be handled under university and departmental procedures.</p>
-    </section>
-
-    <section id="calendar">
-      <h2>Fall 2026 calendar-aligned schedule</h2>
-      <p><strong>Rutgers calendar facts used:</strong> Fall 2026 classes begin Tuesday, September 1; regular classes end Thursday, December 10; Friday classes meet on Wednesday, November 25; Thanksgiving recess runs Thursday, November 26 through Sunday, November 29; reading days are Friday, December 11 and Monday, December 14; fall exams run Tuesday, December 15 through Tuesday, December 22. Regular class meetings for this section are Fridays, 12:10–3:10 p.m., in Lucy Stone Hall (LSH-A143), Livingston Campus.</p>
-      <p><strong>Instructor-preferred final plan:</strong> This draft places the 50% final exam <strong>in class on Friday, December 4, 2026, 12:10–3:10 p.m.</strong> so the course has no separate registrar-period meeting. Rutgers policy normally places cumulative finals in the official final exam period unless the instructional dean approves an exception; obtain department/dean confirmation before using this line in the published syllabus.</p>
-      <p><strong>Invited talks:</strong> The course will include <strong>two invited talks</strong> during regular class meetings. Tentatively, one talk will be paired with the video / multimodal generation unit and one with the world-model / agentic AI / systems unit; exact speakers and dates may change.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Week</th>
-            <th>Date</th>
-            <th>Topic</th>
-            <th>Live demo / in-class task</th>
-            <th>Exam must-know</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Fri Sep 4</td>
-            <td><span class="pill core">Core</span> What is deep learning? Tensors, data, parameters, loss, gradients, and training loops.</td>
-            <td>Claude Code builds a tiny classifier; students draw the data → logits → loss → gradient loop.</td>
-            <td>Define model, parameter, loss, gradient, batch, epoch, overfitting.</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Fri Sep 11</td>
-            <td><span class="pill core">Core</span> Gradient descent, autograd, MLPs, backpropagation, handwritten PyTorch training loop.</td>
-            <td>Implement linear regression and MLP from scratch; inspect gradients before/after one update.</td>
-            <td>Compute one SGD update; trace forward/backward pass; identify learning rate effects.</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Fri Sep 18</td>
-            <td><span class="pill core">Core</span> From standard convolution to CNNs and ResNets; images as tensors; local connectivity, weight sharing, residual learning.</td>
-            <td>Visualize filters and feature maps; add residual connection to a toy network.</td>
-            <td>Convolution shape math; why CNNs generalize better than dense MLPs on images; why residuals help optimization.</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Fri Sep 25</td>
-            <td><span class="pill core">Core</span> Correlation learning, spurious features, robustness, adversarial examples, curse of dimensionality, Gaussian donuts.</td>
-            <td>Train on a spurious color cue, then test after cue flip; generate a small adversarial perturbation.</td>
-            <td>Explain shortcut learning, distribution shift, adversarial perturbation, high-dimensional intuition.</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Fri Oct 2</td>
-            <td><span class="pill core">Core</span> BPE tokenization, embeddings, attention, transformer block, RoPE positional encoding, ViT.</td>
-            <td>Print BPE integer tokens and embedding vectors; visualize one attention head.</td>
-            <td>Calculate attention tensor shapes; explain token IDs, embeddings, Q/K/V, softmax attention, positional information.</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Fri Oct 9</td>
-            <td><span class="pill core">Core</span> NanoGPT in class: train a tiny Shakespeare model; generation; transformer systems intro: KV cache, grouped KV, MoE, gradient checkpointing, FlashAttention.</td>
-            <td>Run NanoGPT-style mini training; inspect generated text; compare prefill vs decode.</td>
-            <td>Autoregressive loss; causal mask; KV cache purpose; why attention is memory/IO heavy.</td>
-          </tr>
-          <tr class="exam">
-            <td>7</td>
-            <td>Fri Oct 16</td>
-            <td><span class="pill exam">Midterm</span> In-class midterm exam, 50% of course grade.</td>
-            <td>Paper exam. Unlimited paper materials. No electronics or AI.</td>
-            <td>Weeks 1–6.</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Fri Oct 23</td>
-            <td><span class="pill core">Core</span> Self-supervised representation learning: SimCLR, triplet loss, contrastive learning, Siamese trivial solution, CLIP, SigLIP, distillation, GKD/OPD.</td>
-            <td>Build two augmented views; compute contrastive similarities; show collapse in a naive Siamese objective.</td>
-            <td>Positive/negative pairs; temperature; trivial solution; image-text alignment; teacher-student distillation.</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Fri Oct 30</td>
-            <td><span class="pill core">Core</span> Probabilistic generative models: ELBO derivation, VAE, VQ-VAE, latent bottlenecks, why VAEs/dimensionality reduction matter for image/video generation.</td>
-            <td>Train a small MNIST VAE; interpolate latent codes; compare reconstruction vs sampling.</td>
-            <td>ELBO terms; encoder/decoder; reparameterization trick; reconstruction vs KL; latent compression.</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Fri Nov 6</td>
-            <td><span class="pill core">Core</span> Diffusion and flows: denoising objective, DDPM intuition, score matching, normalizing flows, rectified flow, MeanFlow, DMD and one-step/few-step generation.</td>
-            <td>Animate noise → image denoising on 2D toy data; compare iterative sampling to one-step distillation.</td>
-            <td>Forward noising; reverse denoising; score; FID intuition; flow vs diffusion; distribution matching.</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>Fri Nov 13</td>
-            <td><span class="pill frontier">Frontier</span> <span class="pill frontier">Invited talk 1</span> Video and unified multimodal generation: long-video challenge, teacher forcing, diffusion forcing, self forcing, causal forcing, RAE, Transfusion, UniFluid, Janus-style unified models.</td>
-            <td>Invited talk plus sketch of error accumulation in autoregressive video; discuss why low-dimensional video latents are necessary.</td>
-            <td>Teacher forcing vs exposure bias; why video is harder than images; continuous vs discrete tokens; unified modeling trade-offs.</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>Fri Nov 20</td>
-            <td><span class="pill core">Core</span> Reinforcement learning and post-training: RL, policy, reward, RLHF, DPO, GRPO, preference learning, alignment, agent evaluation.</td>
-            <td>Paper game: students act as policy, reward model, preference judge, optimizer; derive why preference pairs can train behavior.</td>
-            <td>Policy/reward/value; preference data; DPO idea; GRPO group baseline idea; why post-training changes behavior.</td>
-          </tr>
-          <tr class="makeup">
-            <td>13</td>
-            <td>Wed Nov 25<br><span class="small">Rutgers Friday classes</span></td>
-            <td><span class="pill frontier">Frontier</span> <span class="pill frontier">Invited talk 2</span> World models, agent models, Physical AI, VLA/WAM, System A/B/M, interpretability, and inference systems.</td>
-            <td>Invited talk plus structured debate on world/agent claims; then draw an LLM inference memory map and interpret one toy SAE feature.</td>
-            <td>World model vs policy/agent; VLA vs WAM; why interpretability and inference efficiency both depend on internal representations.</td>
-          </tr>
-          <tr class="exam">
-            <td>14</td>
-            <td>Fri Dec 4</td>
-            <td><span class="pill exam">In-class Final Exam</span> 50% of course grade.</td>
-            <td>Paper exam. Unlimited paper materials. No electronics or AI.</td>
-            <td>Cumulative, with emphasis on Weeks 8–13. Suggested split: 30% cumulative foundations, 70% post-midterm topics.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="weekly">
-      <h2>Instructor teaching details by week</h2>
-      <p>These details are written for the instructor, not just students. Each week has a “demo → explanation → exam skill” structure.</p>
-
-      <details class="week-detail" open>
-        <summary>Week 1 — What deep learning is, and why demos come first</summary>
-        <div>
-          <p><strong>Teach:</strong> supervised learning loop, tensors, parameters, logits, loss surfaces, train/test split, why neural networks are function approximators, and why gradients turn one data point into many parameter updates.</p>
-          <p><strong>Demo:</strong> a two-class toy dataset and a tiny classifier. Use Claude Code to generate a minimal PyTorch script, then ask students to catch missing pieces: seed, train/test split, loss, optimizer, visualization.</p>
-          <p><strong>Notebook task:</strong> draw arrows for <span class="kbd">x → model(x) → loss → backward() → optimizer.step()</span>.</p>
+        <div class="policy-grid">
+          <article class="card">
+            <h3>AI use and integrity</h3>
+            <p>AI coding tools are permitted and expected for learning and project development. Disclose material use, verify all output, and never submit work you cannot explain. AI tools are prohibited during the final exam. Rutgers <a href="https://academicintegrity.rutgers.edu/">academic integrity standards</a> apply.</p>
+          </article>
+          <article class="card">
+            <h3>Attendance and preparation</h3>
+            <p>The course is face-to-face and class meetings include demos and practice that are difficult to reproduce from slides alone. Attend prepared to code, take notes, ask questions, and participate.</p>
+          </article>
+          <article class="card">
+            <h3>Access and accommodations</h3>
+            <p>Students seeking disability-related accommodations should contact the Rutgers <a href="https://ods.rutgers.edu/">Office of Disability Services</a> and share the approved letter with the instructor as early as possible.</p>
+          </article>
         </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 2 — Gradient descent, MLPs, autograd, backprop</summary>
-        <div>
-          <p><strong>Teach:</strong> scalar derivative, vector gradient, chain rule, linear layer shape, activation functions, cross entropy, learning rate, minibatches, and why manual backprop becomes tedious.</p>
-          <p><strong>Demo:</strong> first implement a 1D regression update by hand, then switch to PyTorch autograd. Print gradients for each parameter. Show exploding/vanishing behavior with a bad learning rate or deep MLP.</p>
-          <p><strong>Exam skill:</strong> one-step SGD update and shape tracing through <span class="kbd">Linear → ReLU → Linear</span>.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 3 — Convolution, CNNs, ResNets</summary>
-        <div>
-          <p><strong>Teach:</strong> convolution as a sliding dot product, padding, stride, channels, kernels, pooling, receptive fields, parameter sharing, and residual connections as an optimization trick.</p>
-          <p><strong>Demo:</strong> Sobel/blur filters on images; then a small CNN. Let Claude Code add a residual block and shape assertions.</p>
-          <p><strong>Exam skill:</strong> compute output shape, explain fewer parameters than an MLP, and explain why <span class="kbd">y = x + F(x)</span> helps gradients.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 4 — Spurious correlation, robustness, adversarial examples</summary>
-        <div>
-          <p><strong>Teach:</strong> empirical risk vs true risk, distribution shift, shortcut learning, confounders, invariance, adversarial perturbations, high-dimensional geometry, and Gaussian donut intuition.</p>
-          <p><strong>Demo:</strong> train a classifier where color correlates with label; flip color at test time. Then apply a small gradient-sign perturbation.</p>
-          <p><strong>Exam skill:</strong> distinguish correlation from causation in model behavior; explain why small per-pixel noise can matter in high dimension.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 5 — Tokenization, embeddings, attention, RoPE, ViT</summary>
-        <div>
-          <p><strong>Teach:</strong> BPE merges, token IDs, embedding tables, Q/K/V projections, scaled dot-product attention, softmax, causal vs bidirectional masks, positional encoding, RoPE intuition, image patches in ViT.</p>
-          <p><strong>Demo:</strong> print BPE integer tokens for a sentence; display embedding lookup; compute one attention head with small matrices; visualize attention weights.</p>
-          <p><strong>Exam skill:</strong> label dimensions in <span class="kbd">QKᵀ / sqrt(d)</span> and explain why attention mixes token information.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 6 — NanoGPT and transformer systems</summary>
-        <div>
-          <p><strong>Teach:</strong> next-token prediction, causal mask, training vs generation, temperature, context length, prefill/decode, KV cache, grouped-query/multi-query attention, MoE routing, checkpointing, FlashAttention IO story.</p>
-          <p><strong>Demo:</strong> train a tiny Shakespeare-like model; print generated samples as training progresses; inspect one layer’s attention; compare cached vs uncached generation conceptually.</p>
-          <p><strong>Exam skill:</strong> explain why generation is sequential, why KV cache helps, and why attention is not only a FLOP problem but also a memory movement problem.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 7 — Midterm</summary>
-        <div>
-          <p><strong>Format:</strong> in-class paper exam. Suggested structure: definitions and calibrated blanks; tensor-shape tracing; one gradient calculation; CNN/ResNet explanation; BPE/attention mechanics; small code-reading question.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 8 — Contrastive and self-supervised representation learning</summary>
-        <div>
-          <p><strong>Teach:</strong> augmentation as supervision, invariance, instance discrimination, triplet loss, SimCLR, collapse/trivial solution, CLIP, SigLIP, distillation, generalized/on-policy distillation intuition.</p>
-          <p><strong>Demo:</strong> two views of same image; compute cosine similarity matrix; show how positives and negatives shape embeddings.</p>
-          <p><strong>Exam skill:</strong> explain how a model learns from labels it created from data structure rather than human labels.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 9 — ELBO, VAE, VQ-VAE, latent compression</summary>
-        <div>
-          <p><strong>Teach:</strong> latent variable model, encoder posterior approximation, decoder likelihood, KL divergence, ELBO as reconstruction term minus regularizer, reparameterization, discrete latents in VQ-VAE, why image/video generators often operate in latent spaces.</p>
-          <p><strong>Demo:</strong> MNIST VAE training and latent interpolation; compare reconstruction quality at different latent dimensions.</p>
-          <p><strong>Exam skill:</strong> state the ELBO and explain each term in words.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 10 — Diffusion, flows, DMD, MeanFlow</summary>
-        <div>
-          <p><strong>Teach:</strong> forward noising, denoising network, score intuition, sampling steps, classifier-free guidance, FID as distribution-level metric, normalizing flows, rectified flow, average velocity in MeanFlow, and distribution matching distillation.</p>
-          <p><strong>Demo:</strong> two-dimensional Gaussian donuts: corrupt with noise, learn denoising arrows, sample iteratively; then discuss how distillation compresses sampling steps.</p>
-          <p><strong>Exam skill:</strong> compare autoregressive likelihood, VAE ELBO, diffusion denoising, and flow matching objectives.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 11 — Invited talk 1: video, forcing, unified multimodal generation</summary>
-        <div>
-          <p><strong>Teach:</strong> why video is harder than image generation: temporal coherence, compute, data redundancy, long-horizon consistency, action/physics ambiguity. Connect teacher forcing, exposure bias, diffusion forcing, self forcing, causal forcing, RAE, Transfusion, UniFluid, and Janus-like unified understanding/generation.</p>
-          <p><strong>Invited talk slot:</strong> 45–60 minutes for a researcher or industry guest on video generation, diffusion forcing, unified multimodal models, or evaluation of long-horizon generation. Reserve the final segment for student questions and exam-relevant synthesis.</p>
-          <p><strong>Demo:</strong> a toy sequence predictor with compounding errors. Discuss how forcing choices change the train-test gap.</p>
-          <p><strong>Exam skill:</strong> explain why a model that looks good for 2 seconds may fail for 2 minutes.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 12 — Reinforcement learning, DPO, GRPO, post-training</summary>
-        <div>
-          <p><strong>Teach:</strong> state, action, reward, policy, value, exploration, RLHF pipeline, reward models, preference pairs, DPO as direct preference optimization, GRPO as group-relative policy optimization without a separate critic in its common LLM use.</p>
-          <p><strong>Demo:</strong> a small preference dataset: two answers, one preferred. Derive the intuition of making preferred outputs more likely while controlling drift.</p>
-          <p><strong>Exam skill:</strong> distinguish supervised fine-tuning, RLHF, DPO, and GRPO conceptually.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 13 — Invited talk 2: Wednesday Nov 25 Friday-class meeting; world models, agentic AI, interpretability, and systems</summary>
-        <div>
-          <p><strong>Teach:</strong> world model vs policy vs agent model, agentic workflow vs agentive autonomy, VLA vs WAM, Physical AI, embodied prediction/action loops, System A/B/M framing, limitations of current agents, superposition, sparse autoencoders, transcoders, crosscoders, SelfIE, HBM vs SRAM, cache locality, LRU, KV cache strategies, ring attention, all-reduce/network delay, and gradient checkpointing review.</p>
-          <p><strong>Invited talk slot:</strong> 45–60 minutes for a researcher or industry guest on agentic AI, world models, Physical AI, interpretability, or inference systems. Reserve the final segment for connecting the talk to the final-exam study guide.</p>
-          <p><strong>Demo/debate:</strong> give students printed abstracts from “Critiques of World Models,” “Critique of Agent Model,” and “Why AI systems don’t learn…” Ask them to mark claims as definition, architecture, evidence, or speculation. Then use a toy activation matrix and sparse dictionary to explain features; sketch how FlashAttention avoids materializing attention; draw a distributed attention ring.</p>
-          <p><strong>Exam skill:</strong> write a clean distinction between “predict what happens,” “choose what to do,” and “learn how to improve while acting,” then explain why interpretability and inference efficiency both depend on internal representations.</p>
-        </div>
-      </details>
-
-      <details class="week-detail">
-        <summary>Week 14 — In-class final exam</summary>
-        <div>
-          <p><strong>Format:</strong> in-class paper final exam during the final regular Friday meeting, Friday, December 4, 2026, 12:10–3:10 p.m. Suggested structure: post-midterm definitions; ELBO explanation; VAE/diffusion/flow comparison; forcing-method comparison; DPO/GRPO question; world-model/agent-model critique; interpretability/systems short answers; one cumulative tensor-shape or gradient question.</p>
-          <p><strong>Exam skill:</strong> use the student’s paper notebook as a compact, searchable personal textbook. Correct answers earn full item credit, blank answers earn partial credit, wrong answers earn no credit unless the item states a different rubric.</p>
-        </div>
-      </details>
-    </section>
-
-    <section id="exam-prep">
-      <h2>Exam preparation guide</h2>
-      <div class="grid two">
-        <div class="card soft">
-          <h3>Midterm scope</h3>
-          <p>Weeks 1–6. Students should bring paper notes that include: core definitions; SGD update formula; MLP and CNN diagrams; convolution shape examples; shortcut-learning example; BPE example; attention equation; causal mask diagram; NanoGPT training loop; KV cache explanation.</p>
-        </div>
-        <div class="card soft">
-          <h3>Final scope</h3>
-          <p>Cumulative, with emphasis on Weeks 8–13. Students should bring paper notes that include: contrastive loss diagrams; ELBO derivation; VAE diagram; diffusion/flow comparison; forcing methods; DPO/GRPO comparison; world model vs agent model distinction; interpretability tool definitions; HBM/SRAM and cache diagrams; key technical points from both invited talks.</p>
-        </div>
-      </div>
-      <h3>Question types to use</h3>
-      <ul>
-        <li><strong>Shape tracing:</strong> Given batch size, sequence length, hidden size, and heads, compute Q/K/V and attention output shapes.</li>
-        <li><strong>One-step math:</strong> Compute one SGD update or one simple softmax attention output.</li>
-        <li><strong>Diagram explanation:</strong> Draw CNN, residual block, transformer block, VAE, diffusion chain, or KV cache.</li>
-        <li><strong>Code reading:</strong> Identify model, loss, optimizer, data loader, train/eval mode, or bug in a short PyTorch snippet.</li>
-        <li><strong>Concept contrast:</strong> CNN vs ViT; VAE vs diffusion; DPO vs RLHF; world model vs policy; SAE vs transcoder.</li>
-        <li><strong>Failure mode:</strong> Explain spurious correlation, adversarial vulnerability, exposure bias, model collapse, mode collapse, or cache/memory bottleneck.</li>
-      </ul>
-    </section>
-
-    <section id="policies">
-      <h2>Course policies</h2>
-      <h3>AI and electronics</h3>
-      <p>AI-assisted coding is part of the course during supervised class demos. It is used to accelerate exploration and make debugging visible. Students must still understand every line of code and every equation that appears on the exam.</p>
-      <p>For the optional bonus project, students may use GPT/Claude or similar tools, but they must disclose meaningful AI assistance and remain responsible for correctness, reproducibility, and explanation. AI use on the bonus project is permitted because the purpose is exploration; AI use during exams is prohibited.</p>
-      <p>During exams, electronics and AI access are prohibited. This includes devices that are powered off but accessible at the desk. Devices must be stored away. Approved accommodations are handled through Rutgers procedures.</p>
-
-      <h3>No required homework</h3>
-      <p>No required written homework is submitted or graded. Optional practice prompts, notebooks, papers, and the optional bonus project may be posted for enrichment and exam preparation. The course relies on live attendance, notebook-taking, and exam readiness. Attendance can earn the separate +5 bonus described above, but missed attendance checks do not subtract points from the base grade.</p>
-
-      <h3>Academic integrity</h3>
-      <p>Rutgers takes academic dishonesty seriously. Suspected violations, including unauthorized electronic or AI assistance during exams, will be reported through Rutgers academic integrity procedures. A useful exam pledge is: “On my honor, I have neither received nor given any unauthorized assistance on this examination.”</p>
-
-      <h3>Accessibility</h3>
-      <p>Rutgers welcomes students with disabilities into its educational programs. Students who need accommodations should contact the appropriate Rutgers disability services office, complete the ODS process, and request a Letter of Accommodation as early as possible. Accommodations are not retroactive.</p>
-
-      <h3>Religious observances and authenticated absences</h3>
-      <p>Students should notify the instructor as early as possible about conflicts due to religious observance or authenticated absence. Make-up arrangements for exams follow Rutgers policy and departmental procedures.</p>
-    </section>
-
-    <section id="references">
-      <h2>Reference courses, books, and papers</h2>
-      <p>The course is intentionally undergraduate-first, but it borrows organization and topic coverage from graduate/frontier courses and public books. Readings are recommended, not graded.</p>
-
-      <h3>Course models and books</h3>
-      <ul>
-        <li><a href="https://mit-6s978.github.io/" target="_blank" rel="noopener">MIT 6.S978 Deep Generative Models</a> — generative modeling breadth and frontier framing.</li>
-        <li><a href="https://deepgenerativemodels.github.io/" target="_blank" rel="noopener">Stanford CS236 Deep Generative Models</a> — probabilistic foundations: VAE, flows, diffusion, autoregressive models.</li>
-        <li><a href="https://princeton-cos597r.github.io/" target="_blank" rel="noopener">Princeton COS 597R Deep Dive into Large Language Models</a> — LLM architecture, data, scaling, post-training, research-discussion style.</li>
-        <li><a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank" rel="noopener">Berkeley Agentic AI</a> — agents, evaluation, deployment, multi-agent systems, safety/security.</li>
-        <li><a href="https://visionbook.mit.edu/" target="_blank" rel="noopener">MIT Foundations of Computer Vision</a> — undergraduate-friendly chapters on gradient learning, neural networks, CNNs, transformers, representation learning, and robustness.</li>
-      </ul>
-
-      <h3>Tooling and live coding</h3>
-      <ul>
-        <li><a href="https://anthropic.skilljar.com/claude-code-101" target="_blank" rel="noopener">Claude Code 101</a> — installation, agentic loop, context, tools, permissions, plan mode, code review, customization.</li>
-        <li><a href="https://www.anthropic.com/research/claude-code-expertise" target="_blank" rel="noopener">How Claude Code is used in practice</a> — empirical framing for interactive agentic coding.</li>
-        <li><a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener">nanoGPT</a> — compact GPT training code suitable for classroom simplification.</li>
-      </ul>
-
-      <h3>Selected technical readings</h3>
-      <ul>
-        <li><a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a></li>
-        <li><a href="https://tridao.me/blog/2024/flash3/" target="_blank" rel="noopener">FlashAttention-3 blog</a></li>
-        <li><a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">Direct Preference Optimization</a></li>
-        <li><a href="https://arxiv.org/abs/2402.03300" target="_blank" rel="noopener">DeepSeekMath / GRPO</a></li>
-        <li><a href="https://arxiv.org/abs/2306.13649" target="_blank" rel="noopener">On-Policy Distillation of Language Models / GKD</a></li>
-        <li><a href="https://arxiv.org/abs/2604.00626" target="_blank" rel="noopener">Survey of On-Policy Distillation for LLMs</a></li>
-        <li><a href="https://arxiv.org/abs/2311.18828" target="_blank" rel="noopener">Distribution Matching Distillation</a></li>
-        <li><a href="https://www.boyuan.space/diffusion-forcing/" target="_blank" rel="noopener">Diffusion Forcing</a></li>
-        <li><a href="https://arxiv.org/abs/2602.02214" target="_blank" rel="noopener">Causal Forcing</a></li>
-        <li><a href="https://arxiv.org/abs/2505.13447" target="_blank" rel="noopener">Mean Flows for One-step Generative Modeling</a></li>
-        <li><a href="https://arxiv.org/abs/2510.11690" target="_blank" rel="noopener">Diffusion Transformers with Representation Autoencoders</a></li>
-        <li><a href="https://arxiv.org/html/2408.11039v1" target="_blank" rel="noopener">Transfusion: Predict the Next Token and Diffuse Images</a></li>
-        <li><a href="https://arxiv.org/abs/2503.13436" target="_blank" rel="noopener">UniFluid</a></li>
-        <li><a href="https://arxiv.org/abs/2605.12090" target="_blank" rel="noopener">World Action Models</a></li>
-        <li><a href="https://arxiv.org/abs/2507.05169" target="_blank" rel="noopener">Critiques of World Models</a></li>
-        <li><a href="https://arxiv.org/abs/2606.23991" target="_blank" rel="noopener">Critique of Agent Model</a></li>
-        <li><a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener">Why AI systems don’t learn and what to do about it</a></li>
-        <li><a href="https://arxiv.org/abs/2309.08600" target="_blank" rel="noopener">Sparse Autoencoders Find Highly Interpretable Features in Language Models</a></li>
-        <li><a href="https://arxiv.org/abs/2406.11944" target="_blank" rel="noopener">Transcoders Find Interpretable LLM Feature Circuits</a></li>
-        <li><a href="https://transformer-circuits.pub/2024/crosscoders/index.html" target="_blank" rel="noopener">Sparse Crosscoders for Cross-Layer Features and Model Diffing</a></li>
-      </ul>
-
-      <h3>Rutgers sources to verify before publishing</h3>
-      <ul>
-        <li><a href="https://scheduling.rutgers.edu/academic-calendar/" target="_blank" rel="noopener">Rutgers University Academic Calendar</a></li>
-        <li><a href="https://scheduling.rutgers.edu/exam-scheduling/final-exams/" target="_blank" rel="noopener">Rutgers New Brunswick Final Exam Policies</a></li>
-        <li><a href="https://scheduling.rutgers.edu/wp-content/uploads/2026/06/Fall-2026-New-Brunswick-Final-Exam-Grid.pdf" target="_blank" rel="noopener">Fall 2026 New Brunswick Final Exam Grid</a> — use if the in-class final exception is not approved.</li>
-        <li><a href="https://scheduling.rutgers.edu/course-scheduling/standard-course-periods/" target="_blank" rel="noopener">Rutgers Standard Course Periods</a></li>
-        <li><a href="https://it.rutgers.edu/ai/guidance-on-the-use-of-ai-at-rutgers/" target="_blank" rel="noopener">Rutgers guidance on the use of AI</a></li>
-        <li><a href="https://bloustein.rutgers.edu/faculty/faculty-ptl-guide/" target="_blank" rel="noopener">Rutgers Bloustein faculty guide note on AI grading, privacy, and student-content concerns</a></li>
-        <li><a href="https://nbacademicintegrity.rutgers.edu/node/27" target="_blank" rel="noopener">Rutgers Academic Integrity Syllabus Statement</a></li>
-        <li><a href="https://ods.rutgers.edu/faculty-staff/syllabus-statement" target="_blank" rel="noopener">Rutgers Office of Disability Services Syllabus Statement</a></li>
-      </ul>
-    </section>
+      </section>
+    </main>
 
     <footer>
-      <p>Draft prepared for Fall 2026 Rutgers planning. Last updated: July 3, 2026. Course: DEEP LEARNING, 01:198:462, Section 02; Face-to-Face; Fridays 12:10–3:10 p.m.; Lucy Stone Hall (LSH-A143), Livingston Campus; enrollment 50, maximum enrollment 55, registration stop point 50. Revision: in-class final exam draft, optional 10-point AI-assisted bonus project rubric, 5-point attendance bonus, and two invited-talk slots. Replace remaining bracketed placeholders with office hours, speaker names, and department/dean-approved assessment details before publishing.</p>
+      <p>DEEP LEARNING 01:198:462:02 · Rutgers University · Fall 2026</p>
+      <p>Revised <time datetime="2026-09-02">September 2, 2026</time>. Course announcements and any approved schedule changes will be posted on Canvas.</p>
     </footer>
   </div>
 </body>
