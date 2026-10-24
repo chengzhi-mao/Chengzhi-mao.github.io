@@ -408,16 +408,6 @@
       line-height: 1.35;
     }
 
-    .calendar-note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      color: #5b3a06;
-      background: #fff8e8;
-      border-left: 5px solid #d99116;
-      border-radius: 10px;
-      font-size: 0.92rem;
-    }
-
     .policy-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -594,7 +584,7 @@
           <li>Trace forward and backward computation through linear models, MLPs, CNNs, RNNs, and transformers.</li>
           <li>Read and debug a compact PyTorch training pipeline, including tensor shapes and optimization behavior.</li>
           <li>Explain self-attention, causal language modeling, and the core structure of a GPT-style model.</li>
-          <li>Compare VAE and GAN objectives, strengths, failure modes, and appropriate uses.</li>
+          <li>Compare diffusion, VAE, and GAN objectives, strengths, failure modes, and appropriate uses.</li>
           <li>Design, implement, evaluate, and clearly present an individual deep learning project.</li>
         </ol>
       </section>
@@ -612,7 +602,7 @@
             <span class="points">50 points</span>
             <h3>Individual project</h3>
             <p>Build a deep learning system or experiment with a visible demo, evidence-based evaluation, and a concise explanation of what was learned.</p>
-            <p><strong>Presentations:</strong> Weeks 11 and 12. Your final artifact is due before your assigned presentation.</p>
+            <p><strong>Presentations:</strong> Weeks 12 and 13. Your final artifact is due before your assigned presentation.</p>
           </article>
           <article class="grade-card" data-points="50">
             <span class="points">50 points</span>
@@ -735,8 +725,8 @@
               <tr>
                 <td><span class="week-label">09</span></td>
                 <td>Fri Oct 30</td>
-                <td><strong>Optimization</strong><span class="tag">SGD</span><span class="tag">momentum</span><span class="tag">Adam</span></td>
-                <td>Compare optimizers and learning-rate schedules; read loss curves and debug unstable training.</td>
+                <td><strong>Diffusion models</strong><span class="tag">forward noising</span><span class="tag">denoising</span><span class="tag">sampling</span></td>
+                <td>Train a small denoising diffusion model; trace the forward noising process, the noise-prediction objective, and iterative sampling.</td>
               </tr>
               <tr>
                 <td><span class="week-label">10</span></td>
@@ -744,23 +734,23 @@
                 <td><strong>VAE and GAN</strong><span class="tag">latent variables</span><span class="tag">adversarial learning</span></td>
                 <td>Compare reconstructions and samples; trace reparameterization, the ELBO, GAN objectives, and training failure modes.</td>
               </tr>
-              <tr class="presentation">
+              <tr class="review">
                 <td><span class="week-label">11</span></td>
                 <td>Fri Nov 13</td>
-                <td><strong>Project presentations I</strong><span class="tag">individual project</span></td>
-                <td>Live demos, technical explanations, questions, and rubric-based feedback.</td>
+                <td><strong>Final exam review and go-through</strong><span class="tag">review</span></td>
+                <td>Connect the full course sequence; work through representative calculations, diagrams, and pseudocode questions.</td>
               </tr>
               <tr class="presentation">
                 <td><span class="week-label">12</span></td>
                 <td>Fri Nov 20</td>
-                <td><strong>Project presentations II</strong><span class="tag">individual project</span></td>
+                <td><strong>Project presentations I</strong><span class="tag">individual project</span></td>
                 <td>Live demos, technical explanations, questions, and rubric-based feedback.</td>
               </tr>
-              <tr class="review">
+              <tr class="presentation">
                 <td><span class="week-label">13</span></td>
                 <td>Wed Nov 25</td>
-                <td><strong>Final exam review and go-through</strong><span class="tag">Friday classes meet Wednesday</span></td>
-                <td>Connect the full course sequence; work through representative calculations, diagrams, and pseudocode questions.</td>
+                <td><strong>Project presentations II</strong><span class="tag">individual project</span><span class="tag">Friday classes meet Wednesday</span></td>
+                <td>Live demos, technical explanations, questions, and rubric-based feedback.</td>
               </tr>
               <tr class="exam-row">
                 <td><span class="week-label">14</span></td>
@@ -771,10 +761,6 @@
             </tbody>
           </table>
         </div>
-
-        <p class="calendar-note">
-          The <a href="https://scheduling.rutgers.edu/academic-calendar/">Rutgers Fall 2026 calendar</a> designates Wednesday, November 25 as a Friday-class day. The December 4 in-class final is the planned last meeting; because Rutgers ordinarily schedules final exams during the official exam period, this timing is subject to the required department/dean approval. If the plan is not approved, the official Rutgers exam schedule will control.
-        </p>
       </section>
 
       <section id="policies">
@@ -802,7 +788,7 @@
 
     <footer>
       <p>DEEP LEARNING 01:198:462:02 · Rutgers University · Fall 2026</p>
-      <p>Revised <time datetime="2026-09-02">September 2, 2026</time>. Course announcements and any approved schedule changes will be posted on Canvas.</p>
+      <p>Revised <time datetime="2026-10-24">October 24, 2026</time>. Course announcements and any approved schedule changes will be posted on Canvas.</p>
     </footer>
   </div>
 </body>
